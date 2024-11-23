@@ -1,0 +1,93 @@
+<mujoco model="iiwa7">
+    <compiler angle="radian" meshdir="" inertiafromgeom="true" />
+    <size njmax="500" nconmax="100" />
+
+    <option>
+        <flag gravity="enable" />
+    </option>
+
+    <default>
+        <joint limited='true' damping='1' armature='0'/>
+        <geom contype='1' conaffinity='1' condim='3' rgba='0.8 0.6 .4 1'
+        	margin="0.001" solref=".02 1" solimp=".8 .8 .01" material="geom"/>
+    </default>
+
+ <default>
+    <joint damping="0.01" frictionloss="0"/>
+    <default class="visual">
+      <geom contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom contype="1" conaffinity="1" friction="1 0.5 0.1" />
+    </default>
+      <default class="obj">
+      <geom condim="6" friction="1 0.5 0.1"  />
+    </default>
+
+      <default class="fingers">
+      <geom friction="1 0.5 0.2"  />
+    </default>
+      <default class="visual1">
+      <geom contype="1" conaffinity="1"/>
+    </default>
+        <default class="visual2">
+     <geom contype="1" conaffinity="1"/>
+    </default>
+        <default class="visual3">
+     <geom contype="1" conaffinity="1"/>
+    </default>
+        <default class="visual4">
+     <geom contype="1" conaffinity="1"/>
+    </default>
+        <default class="visual5">
+      <geom contype="1" conaffinity="1"/>
+    </default>
+
+    <site rgba="1 0 0 .5"/>
+  </default>
+
+        <asset>
+<!--		<texture type="skybox" builtin="gradient" width="128" height="128" rgb1=".4 .6 .8"-->
+<!--            rgb2="0 0 0"/>-->
+            <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278"
+                rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>
+            <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2"
+                width="512" height="512"/>
+
+            <material name='MatPlane' reflectance='0.5' texture="texplane" texrepeat="1 1" texuniform="true"/>
+            <material name='geom' texture="texgeom" texuniform="true"/>
+             <texture builtin="flat" name="allegro_mount_tex" height="32" width="32" rgb1="0.2 0.2 0.2" type="cube"/>
+             <texture builtin="flat" name="hand_tex" height="32" width="32" rgb1="0.2 0.2 0.2 " type="cube"/>
+             <texture builtin="flat" name="tip_tex" height="32" width="32" rgb1="0.9 0.9 0.9" type="cube"/>
+
+            <material name="allegro_mount_mat" shininess="0.03" specular="0.25"/>
+            <material name="hand_mat" shininess="0.03" specular="0.25" />
+            <material name="tip_mat" shininess="0.03" specular="0.25" />
+        </asset>
+
+    <worldbody>
+        <light pos="0 0 10" castshadow="false"/>
+         <light directional='false' diffuse='.8 .8 .8' specular='0.3 0.3 0.3' pos='0 0 4.0' dir='0 -.15 -1'/>
+        <geom name="floor" class="collision" type="plane" size="10 10 1" rgba=".8 .8 .8 1" material="MatPlane"/>
+        <body name="hand" euler="0 0 0" pos="0 0 0.01">
+            <freejoint/>
+            <include file="hand_test01.xml"/>
+        </body>
+    </worldbody>
+
+<!--      <actuator>-->
+<!--          <motor name="joint_11" ctrllimited="true" ctrlrange="-3 3" joint="joint_11"/>-->
+<!--          <motor name="joint_12" ctrllimited="true" ctrlrange="-3 3" joint="joint_12"/>-->
+<!--          <motor name="joint_21" ctrllimited="true" ctrlrange="-3 3" joint="joint_21"/>-->
+<!--          <motor name="joint_22" ctrllimited="true" ctrlrange="-3 3" joint="joint_22"/>-->
+<!--          <motor name="joint_31" ctrllimited="true" ctrlrange="-3 3" joint="joint_31"/>-->
+<!--          <motor name="joint_32" ctrllimited="true" ctrlrange="-3 3" joint="joint_32"/>-->
+<!--          <motor name="joint_41" ctrllimited="true" ctrlrange="-3 3" joint="joint_41"/>-->
+<!--          <motor name="joint_42" ctrllimited="true" ctrlrange="-3 3" joint="joint_42"/>-->
+<!--          <motor name="joint_51" ctrllimited="true" ctrlrange="-3 3" joint="joint_51"/>-->
+<!--          <motor name="joint_52" ctrllimited="true" ctrlrange="-3 3" joint="joint_52"/>-->
+
+<!--    </actuator>-->
+
+
+</mujoco>

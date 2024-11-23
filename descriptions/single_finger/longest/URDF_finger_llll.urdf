@@ -1,0 +1,234 @@
+<?xml version="1.0" ?>
+<robot name="URDF_finger_llll" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="5.810609836920757e-14 -3.5557377263056094e-06 0.004698273696031688" rpy="0 0 0"/>
+    <mass value="0.004531103214243681"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="MCP_spread_motor_1">
+  <inertial>
+    <origin xyz="4.40257654920099e-06 -0.0075382982459979535 -0.011349379478781948" rpy="0 0 0"/>
+    <mass value="0.11379089624899982"/>
+    <inertia ixx="1.6e-05" iyy="8e-06" izz="1.5e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.0 -0.0036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/MCP_spread_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.0 -0.0036" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/MCP_spread_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="MCP_motor_1">
+  <inertial>
+    <origin xyz="-0.011349379464972085 0.00753829824657392 4.402565036948358e-06" rpy="0 0 0"/>
+    <mass value="0.11379089638693089"/>
+    <inertia ixx="1.5e-05" iyy="8e-06" izz="1.6e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0106 -0.0435 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/MCP_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0106 -0.0435 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/MCP_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="proximal_1">
+  <inertial>
+    <origin xyz="-0.008169135912463519 0.03727461554779869 -3.230055112268815e-15" rpy="0 0 0"/>
+    <mass value="0.05275493771588791"/>
+    <inertia ixx="1.6e-05" iyy="1.2e-05" izz="2.6e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0105 -0.0435 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/proximal_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0105 -0.0435 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/proximal_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="PIP_DIP_motor_1">
+  <inertial>
+    <origin xyz="-0.011349379464972083 0.007538298247408273 4.402565036993461e-06" rpy="0 0 0"/>
+    <mass value="0.11379089638693095"/>
+    <inertia ixx="1.5e-05" iyy="8e-06" izz="1.6e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0106 -0.1025 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/PIP_DIP_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0106 -0.1025 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/PIP_DIP_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="middle_1">
+  <inertial>
+    <origin xyz="-0.008827081354573583 0.03128096306151058 1.214306433183765e-17" rpy="0 0 0"/>
+    <mass value="0.041818234501644305"/>
+    <inertia ixx="9e-06" iyy="1e-05" izz="1.6e-05" ixy="1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0105 -0.1025 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/middle_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0105 -0.1025 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/middle_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="distal_1">
+  <inertial>
+    <origin xyz="-0.013499999999999996 0.02735449827278072 3.469446951953614e-18" rpy="0 0 0"/>
+    <mass value="0.18955441844471713"/>
+    <inertia ixx="5.4e-05" iyy="1.4e-05" izz="5.5e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0135 -0.153 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/distal_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0135 -0.153 0.008" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/distal_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="metacarpal_1">
+  <inertial>
+    <origin xyz="0.00044378321626828974 0.0038849382654235335 -0.011500000000001412" rpy="0 0 0"/>
+    <mass value="0.11944139301006772"/>
+    <inertia ixx="5.5e-05" iyy="2.8e-05" izz="7.3e-05" ixy="-2e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.0035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/metacarpal_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.0035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/xiao/research/lasa/mujoco_new/crawling_robot/descriptions/single_finger/longest/meshes/metacarpal_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="MCP_spread" type="continuous">
+  <origin xyz="0.0 0.0 0.0036" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="MCP_spread_motor_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="MCP" type="continuous">
+  <origin xyz="0.0106 0.0435 -0.0115" rpy="0 0 0"/>
+  <parent link="metacarpal_1"/>
+  <child link="MCP_motor_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Proximal_to_motor" type="fixed">
+  <origin xyz="-0.0001 0.0 0.0" rpy="0 0 0"/>
+  <parent link="MCP_motor_1"/>
+  <child link="proximal_1"/>
+</joint>
+
+<joint name="PIP" type="continuous">
+  <origin xyz="0.0001 0.059 0.0" rpy="0 0 0"/>
+  <parent link="proximal_1"/>
+  <child link="PIP_DIP_motor_1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="Middle_to_motor" type="fixed">
+  <origin xyz="-0.0001 0.0 0.0" rpy="0 0 0"/>
+  <parent link="PIP_DIP_motor_1"/>
+  <child link="middle_1"/>
+</joint>
+
+<joint name="DIP" type="continuous">
+  <origin xyz="0.003 0.0505 0.0" rpy="0 0 0"/>
+  <parent link="middle_1"/>
+  <child link="distal_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="Metacarpal_to_motor" type="fixed">
+  <origin xyz="0.0 0.0 -0.0001" rpy="0 0 0"/>
+  <parent link="MCP_spread_motor_1"/>
+  <child link="metacarpal_1"/>
+</joint>
+
+</robot>

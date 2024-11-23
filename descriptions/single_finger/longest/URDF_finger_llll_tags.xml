@@ -1,0 +1,51 @@
+<mujoco model="URDF_finger_llll">
+    <compiler angle="radian" meshdir="/home/xiao/research/lasa/mujoco_new/crawling_robot/single_finger/longest/meshes/" />
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MCP_spread_motor_1" file="MCP_spread_motor_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MCP_motor_1" file="MCP_motor_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="proximal_1" file="proximal_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="PIP_DIP_motor_1" file="PIP_DIP_motor_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="middle_1" file="middle_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="distal_1" file="distal_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="metacarpal_1" file="metacarpal_1.stl" scale="0.001 0.001 0.001" />
+    </asset>
+    <worldbody>
+        <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+        <body name="MCP_spread_motor_1" pos="0 0 0.0036">
+            <inertial pos="0.000229415 -0.00168831 -0.0114777" quat="0.513903 0.485699 -0.512542 0.487136" mass="0.233232" diaginertia="9.56159e-05 7.87309e-05 3.58914e-05" />
+            <joint name="MCP_spread" pos="0 0 0" axis="0 0 -1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_spread_motor_1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="metacarpal_1" />
+            <body name="MCP_motor_1" pos="0.0106 0.0435 -0.0116">
+                <inertial pos="-0.0103737 0.0169576 3.00801e-06" quat="0.518903 0.480363 -0.518852 0.480399" mass="0.166546" diaginertia="7.42141e-05 6.31269e-05 2.00872e-05" />
+                <joint name="MCP" pos="0 0 0" axis="-1 0 0" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_motor_1" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="proximal_1" />
+                <body name="PIP_DIP_motor_1" pos="0 0.059 0">
+                    <inertial pos="-0.0106984 0.0139189 3.21942e-06" quat="0.508179 0.491701 -0.508113 0.491737" mass="0.155609" diaginertia="4.94178e-05 4.12633e-05 1.81545e-05" />
+                    <joint name="PIP" pos="0 0 0" axis="-1 0 0" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="PIP_DIP_motor_1" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="middle_1" />
+                    <body name="distal_1" pos="0.0029 0.0505 0">
+                        <inertial pos="-0.0135 0.0273545 0" quat="0.5 0.5 -0.5 0.5" mass="0.189554" diaginertia="5.5e-05 5.4e-05 1.4e-05" />
+                        <joint name="DIP" pos="0 0 0" axis="1 0 0" />
+                        <geom pos="-0.0135 -0.153 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="distal_1" />
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+        <equality>
+        <joint joint1="PIP" joint2="DIP" polycoef="0 -1 0 0 0"/>
+    </equality>
+
+    <actuator>
+        <position name="joint_01" ctrllimited="true" ctrlrange="-1.0 1.0" joint="MCP_spread" />
+        <position name="joint_02" ctrllimited="true" ctrlrange="-1.0 1.0" joint="MCP" />
+        <position name="joint_03" ctrllimited="true" ctrlrange="-1.0 1.0" joint="PIP" />
+  </actuator>
+
+</mujoco>

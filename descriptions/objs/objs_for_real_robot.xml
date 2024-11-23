@@ -1,0 +1,27 @@
+<objects>
+   <body name="sphere_1" pos="1   -0.065   0.1" quat=" 1 0 0 0">
+        <freejoint/>
+        <geom name="sphere_1" class="obj" mass="0.005" pos="0 0 0" rgba="1 0 0 1" size="0.017" type="sphere"/>
+   </body>
+
+    <body name="cylinder_1" pos="1   0.5  0.1" quat=" 1 0 0 0">
+        <freejoint/>
+        <geom name="cylinder_1" class="obj" mass="0.005" pos="0 0 0" rgba="0.92156863 0.81176471 0.69411765 1" size="0.012 0.045" type="cylinder"/>
+   </body>
+
+    <body name="box_1" pos="-1   0.5  0.1" quat=" 1 1 0 0">
+        <freejoint/>
+        <geom name="box_1" class="obj" mass="0.01" pos="0 0 0" rgba="1 0 0 1" size="0.015 0.01 0.03" type="box"/>
+    </body>
+
+    <body name="cube_1" pos="-0.35   0.25  0.1" quat=" 1 1 0 0">
+        <freejoint/>
+        <geom name="cube_1" class="obj" mass="0.01" pos="0 0 0" rgba="0.92156863 0.81176471 0.69411765 1" size="0.015 0.01 0.015" type="box"/>
+    </body>
+
+<!--        <body name="attractor_1" mocap="true" pos="0.69  -0.065   1.487" quat=" 0.80390483   0.41848636  -0.37486698  -0.1951434">-->
+<!--            <geom name="attractor_1" class="attractor" mass="0.01" pos="0 0 0" rgba="1 0 0 1" size="0.0075 0.005 0.015" type="box"/>-->
+<!--        </body>-->
+
+</objects>
+

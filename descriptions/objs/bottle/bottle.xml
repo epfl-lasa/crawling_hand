@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="textured">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" />
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="bottle" file="texture_map.png" />
+    <material name="bottle" texture="bottle" specular="0.5" shininess="0.5" />
+    <mesh file="textured.obj" name="bottle" />
+    <mesh file="textured_collision_0.obj" name="bottle_0" />
+    <mesh file="textured_collision_1.obj" name="bottle_1" />
+    <mesh file="textured_collision_2.obj" name="bottle_2" />
+    <mesh file="textured_collision_3.obj" name="bottle_3" />
+    <mesh file="textured_collision_4.obj" name="bottle_4" />
+    <mesh file="textured_collision_5.obj" name="bottle_5" />
+    <mesh file="textured_collision_6.obj" name="bottle_6" />
+    <mesh file="textured_collision_7.obj" name="bottle_7" />
+    <mesh file="textured_collision_8.obj" name="bottle_8" />
+    <mesh file="textured_collision_9.obj" name="bottle_9" />
+    <mesh file="textured_collision_10.obj" name="bottle_10" />
+    <mesh file="textured_collision_11.obj" name="bottle_11" />
+    <mesh file="textured_collision_12.obj" name="bottle_12" />
+    <mesh file="textured_collision_13.obj" name="bottle_13" />
+    <mesh file="textured_collision_14.obj" name="bottle_14" />
+    <mesh file="textured_collision_15.obj" name="bottle_15" />
+    <mesh file="textured_collision_16.obj" name="bottle_16" />
+    <mesh file="textured_collision_17.obj" name="bottle_17" />
+    <mesh file="textured_collision_18.obj" name="bottle_18" />
+    <mesh file="textured_collision_19.obj" name="bottle_19" />
+    <mesh file="textured_collision_20.obj" name="bottle_20" />
+    <mesh file="textured_collision_21.obj" name="bottle_21" />
+    <mesh file="textured_collision_22.obj" name="bottle_22" />
+    <mesh file="textured_collision_23.obj" name="bottle_23" />
+    <mesh file="textured_collision_24.obj" name="bottle_24" />
+    <mesh file="textured_collision_25.obj" name="bottle_25" />
+    <mesh file="textured_collision_26.obj" name="bottle_26" />
+    <mesh file="textured_collision_27.obj" name="bottle_27" />
+    <mesh file="textured_collision_28.obj" name="bottle_28" />
+    <mesh file="textured_collision_29.obj" name="bottle_29" />
+    <mesh file="textured_collision_30.obj" name="bottle_30" />
+    <mesh file="textured_collision_31.obj" name="bottle_31" />
+    <mesh file="textured_collision_32.obj" name="bottle_32" />
+    <mesh file="textured_collision_33.obj" name="bottle_33" />
+    <mesh file="textured_collision_34.obj" name="bottle_34" />
+    <mesh file="textured_collision_35.obj" name="bottle_35" />
+    <mesh file="textured_collision_36.obj" name="bottle_36" />
+    <mesh file="textured_collision_37.obj" name="bottle_37" />
+    <mesh file="textured_collision_38.obj" name="bottle_38" />
+    <mesh file="textured_collision_39.obj" name="bottle_39" />
+    <mesh file="textured_collision_40.obj" name="bottle_40" />
+    <mesh file="textured_collision_41.obj" name="bottle_41" />
+    <mesh file="textured_collision_42.obj" name="bottle_42" />
+    <mesh file="textured_collision_43.obj" name="bottle_43" />
+    <mesh file="textured_collision_44.obj" name="bottle_44" />
+    <mesh file="textured_collision_45.obj" name="bottle_45" />
+    <mesh file="textured_collision_46.obj" name="bottle_46" />
+    <mesh file="textured_collision_47.obj" name="bottle_47" />
+    <mesh file="textured_collision_48.obj" name="bottle_48" />
+    <mesh file="textured_collision_49.obj" name="bottle_49" />
+    <mesh file="textured_collision_50.obj" name="bottle_50" />
+    <mesh file="textured_collision_51.obj" name="bottle_51" />
+    <mesh file="textured_collision_52.obj" name="bottle_52" />
+    <mesh file="textured_collision_53.obj" name="bottle_53" />
+    <mesh file="textured_collision_54.obj" name="bottle_54" />
+    <mesh file="textured_collision_55.obj" name="bottle_55" />
+    <mesh file="textured_collision_56.obj" name="bottle_56" />
+    <mesh file="textured_collision_57.obj" name="bottle_57" />
+    <mesh file="textured_collision_58.obj" name="bottle_58" />
+    <mesh file="textured_collision_59.obj" name="bottle_59" />
+    <mesh file="textured_collision_60.obj" name="bottle_60" />
+    <mesh file="textured_collision_61.obj" name="bottle_61" />
+    <mesh file="textured_collision_62.obj" name="bottle_62" />
+    <mesh file="textured_collision_63.obj" name="bottle_63" />
+  </asset>
+  <worldbody>
+    <body name="bottle">
+      <geom material="bottle" mesh="bottle" class="visual" />
+      <geom mesh="bottle_0" class="collision" />
+      <geom mesh="bottle_1" class="collision" />
+      <geom mesh="bottle_2" class="collision" />
+      <geom mesh="bottle_3" class="collision" />
+      <geom mesh="bottle_4" class="collision" />
+      <geom mesh="bottle_5" class="collision" />
+      <geom mesh="bottle_6" class="collision" />
+      <geom mesh="bottle_7" class="collision" />
+      <geom mesh="bottle_8" class="collision" />
+      <geom mesh="bottle_9" class="collision" />
+      <geom mesh="bottle_10" class="collision" />
+      <geom mesh="bottle_11" class="collision" />
+      <geom mesh="bottle_12" class="collision" />
+      <geom mesh="bottle_13" class="collision" />
+      <geom mesh="bottle_14" class="collision" />
+      <geom mesh="bottle_15" class="collision" />
+      <geom mesh="bottle_16" class="collision" />
+      <geom mesh="bottle_17" class="collision" />
+      <geom mesh="bottle_18" class="collision" />
+      <geom mesh="bottle_19" class="collision" />
+      <geom mesh="bottle_20" class="collision" />
+      <geom mesh="bottle_21" class="collision" />
+      <geom mesh="bottle_22" class="collision" />
+      <geom mesh="bottle_23" class="collision" />
+      <geom mesh="bottle_24" class="collision" />
+      <geom mesh="bottle_25" class="collision" />
+      <geom mesh="bottle_26" class="collision" />
+      <geom mesh="bottle_27" class="collision" />
+      <geom mesh="bottle_28" class="collision" />
+      <geom mesh="bottle_29" class="collision" />
+      <geom mesh="bottle_30" class="collision" />
+      <geom mesh="bottle_31" class="collision" />
+      <geom mesh="bottle_32" class="collision" />
+      <geom mesh="bottle_33" class="collision" />
+      <geom mesh="bottle_34" class="collision" />
+      <geom mesh="bottle_35" class="collision" />
+      <geom mesh="bottle_36" class="collision" />
+      <geom mesh="bottle_37" class="collision" />
+      <geom mesh="bottle_38" class="collision" />
+      <geom mesh="bottle_39" class="collision" />
+      <geom mesh="bottle_40" class="collision" />
+      <geom mesh="bottle_41" class="collision" />
+      <geom mesh="bottle_42" class="collision" />
+      <geom mesh="bottle_43" class="collision" />
+      <geom mesh="bottle_44" class="collision" />
+      <geom mesh="bottle_45" class="collision" />
+      <geom mesh="bottle_46" class="collision" />
+      <geom mesh="bottle_47" class="collision" />
+      <geom mesh="bottle_48" class="collision" />
+      <geom mesh="bottle_49" class="collision" />
+      <geom mesh="bottle_50" class="collision" />
+      <geom mesh="bottle_51" class="collision" />
+      <geom mesh="bottle_52" class="collision" />
+      <geom mesh="bottle_53" class="collision" />
+      <geom mesh="bottle_54" class="collision" />
+      <geom mesh="bottle_55" class="collision" />
+      <geom mesh="bottle_56" class="collision" />
+      <geom mesh="bottle_57" class="collision" />
+      <geom mesh="bottle_58" class="collision" />
+      <geom mesh="bottle_59" class="collision" />
+      <geom mesh="bottle_60" class="collision" />
+      <geom mesh="bottle_61" class="collision" />
+      <geom mesh="bottle_62" class="collision" />
+      <geom mesh="bottle_63" class="collision" />
+    </body>
+  </worldbody>
+</mujoco>

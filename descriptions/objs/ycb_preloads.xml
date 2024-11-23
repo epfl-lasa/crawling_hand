@@ -1,0 +1,28 @@
+<ycb>
+    <asset>
+        <mesh file="objs/apple/textured.obj" name="apple" />
+        <texture type="2d" name="apple" file="objs/apple/texture_map.png"/>
+        <material name="apple" texture="apple" specular="0.5" shininess="0.5" />
+
+        <mesh file="objs/bottle/textured.obj" name="bottle" />
+        <texture type="2d" name="bottle" file="objs/bottle/texture_map.png"/>
+        <material name="bottle" texture="bottle" specular="0.5" shininess="0.5" />
+
+        <mesh file="objs/fork/textured.obj" name="fork" />
+        <texture type="2d" name="fork" file="objs/fork/texture_map.png"/>
+        <material name="fork" texture="fork" specular="0.5" shininess="0.5" />
+
+         <mesh file="objs/lemon/textured.obj" name="lemon" />
+        <texture type="2d" name="lemon" file="objs/lemon/texture_map.png"/>
+        <material name="lemon" texture="lemon" specular="0.5" shininess="0.5" />
+
+        <mesh file="objs/strawberry/textured.obj" name="strawberry" />
+        <texture type="2d" name="strawberry" file="objs/strawberry/texture_map.png"/>
+        <material name="strawberry" texture="strawberry" specular="0.5" shininess="0.5" />
+
+        <mesh file="objs/can/textured.obj" name="can" />
+        <texture type="2d" name="can" file="objs/can/texture_map.png"/>
+        <material name="can" texture="can" specular="0.5" shininess="0.5" />
+    </asset>
+
+</ycb>

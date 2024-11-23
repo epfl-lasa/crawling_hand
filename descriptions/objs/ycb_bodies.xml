@@ -1,0 +1,49 @@
+<ycb>
+    <body name="apple" pos="1 0 0">
+        <inertial pos="-8.963122858409468e-09 0.09432490407944878 -3.18747072778518e-05" mass="0.01" fullinertia="5.3633229670599616e-05 7.067600217671682e-06 5.363261224796618e-05 -5.546109067138381e-12 -1.6654768074641885e-10 -3.740678106916932e-12"/>
+        <geom mesh="apple" material="apple" class="visual" type="mesh"/>
+<!--        <geom mesh="apple" class="collision"/>-->
+        <freejoint/>
+    </body>
+
+<!--    <body name="bottle" pos="0 0 0.8">-->
+<!--        <inertial pos="-8.963122858409468e-09 0.09432490407944878 -3.18747072778518e-05" mass="0.01" fullinertia="5.3633229670599616e-05 7.067600217671682e-06 5.363261224796618e-05 -5.546109067138381e-12 -1.6654768074641885e-10 -3.740678106916932e-12"/>-->
+<!--        <geom mesh="bottle" material="bottle" class="visual" type="mesh"/>-->
+<!--&lt;!&ndash;        <geom mesh="bottle" class="collision"/>&ndash;&gt;-->
+<!--        <freejoint/>-->
+<!--    </body>-->
+
+<!--    <body name="fork" pos="0 0 0.6">-->
+<!--        <inertial pos="-8.963122858409468e-09 0.09432490407944878 -3.18747072778518e-05" mass="0.01" fullinertia="5.3633229670599616e-05 7.067600217671682e-06 5.363261224796618e-05 -5.546109067138381e-12 -1.6654768074641885e-10 -3.740678106916932e-12"/>-->
+<!--        <geom mesh="fork" material="fork" class="visual" type="mesh"/>-->
+<!--&lt;!&ndash;        <geom mesh="fork" class="collision"/>&ndash;&gt;-->
+<!--        <freejoint/>-->
+<!--    </body>-->
+
+    <body name="lemon" pos="0 1 0.2">
+        <inertial pos="-8.963122858409468e-09 0.09432490407944878 -3.18747072778518e-05" mass="0.01" fullinertia="5.3633229670599616e-05 7.067600217671682e-06 5.363261224796618e-05 -5.546109067138381e-12 -1.6654768074641885e-10 -3.740678106916932e-12"/>
+        <geom mesh="lemon" material="lemon" class="visual" type="mesh"/>
+<!--        <geom mesh="lemon" class="collision"/>-->
+        <freejoint/>
+    </body>
+
+    <body name="strawberry" pos="1 0.15 0">
+        <inertial pos="-8.963122858409468e-09 0.09432490407944878 -3.18747072778518e-05" mass="0.01" fullinertia="5.3633229670599616e-05 7.067600217671682e-06 5.363261224796618e-05 -5.546109067138381e-12 -1.6654768074641885e-10 -3.740678106916932e-12"/>
+        <geom mesh="strawberry" material="strawberry" class="visual" type="mesh"/>
+<!--        <geom mesh="strawberry" class="collision"/>-->
+        <freejoint/>
+    </body>
+
+    <body name="can" pos="1 0 1.2">
+        <inertial pos="-8.963122858409468e-09 0.09432490407944878 -3.18747072778518e-05" mass="0.01" fullinertia="5.3633229670599616e-05 7.067600217671682e-06 5.363261224796618e-05 -5.546109067138381e-12 -1.6654768074641885e-10 -3.740678106916932e-12"/>
+        <geom mesh="can" material="can" class="visual" type="mesh"/>
+<!--        <geom mesh="can" class="collision"/>-->
+        <freejoint/>
+    </body>
+
+       <body name="sphere_1" pos="1   -0.065   0.1" quat=" 1 0 0 0">
+        <freejoint/>
+        <geom name="sphere_1" class="obj" mass="0.005" pos="0 0 0" rgba="1 0 0 1" size="0.02" type="sphere"/>
+   </body>
+
+</ycb>

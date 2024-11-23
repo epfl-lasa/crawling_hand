@@ -1,0 +1,1019 @@
+<?xml version="1.0" ?>
+<robot name="converted_robot">
+   <link name="world">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.0"/>
+         <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <link name="world_base">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.0"/>
+         <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <link name="world2world_base_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="world2world_base_fixed">
+      <parent link="world"/>
+      <child link="world2world_base_fixed"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <joint type="fixed" name="world2world_base_fixed_offset">
+      <parent link="world2world_base_fixed"/>
+      <child link="world_base"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="hand_base">
+      <inertial>
+         <origin xyz="-1.6730076197990877e-19 -2.4049484534611883e-19 0.01499999999636202" rpy="1.5707963267948966 -1.5707963267948966 0.0"/>
+         <mass value="0.02"/>
+         <inertia ixx="6.295588135660079e-05" iyy="3.597960734529527e-05" izz="3.597960734529527e-05" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="palm">
+         <origin xyz="-1.6730076197990877e-19 -2.4049484534611883e-19 0.02999999999636202" rpy="1.5707963267948966 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_palm.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="palm">
+         <origin xyz="-1.6730076197990877e-19 -2.4049484534611883e-19 -3.637978785279784e-12" rpy="1.5707963267948966 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_palm.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="world2hand_base_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="world2hand_base_fixed">
+      <parent link="world"/>
+      <child link="world2hand_base_fixed"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <joint type="fixed" name="world2hand_base_fixed_offset">
+      <parent link="world2hand_base_fixed"/>
+      <child link="hand_base"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="hand">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.0"/>
+         <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <link name="hand_base2hand_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="hand_base2hand_fixed">
+      <parent link="hand_base"/>
+      <child link="hand_base2hand_fixed"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <joint type="fixed" name="hand_base2hand_fixed_offset">
+      <parent link="hand_base2hand_fixed"/>
+      <child link="hand"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="finger_1">
+      <inertial>
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948963 0.0"/>
+         <mass value="0.000657218797018835"/>
+         <inertia ixx="1.7510324245333604e-08" iyy="9.68743156888488e-09" izz="9.674325660088184e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="base_link">
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_base_link.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="hand2finger_1_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="hand2finger_1_fixed">
+      <parent link="hand"/>
+      <child link="hand2finger_1_fixed"/>
+      <origin xyz="0.0 0.0725 0.022" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <joint type="fixed" name="hand2finger_1_fixed_offset">
+      <parent link="hand2finger_1_fixed"/>
+      <child link="finger_1"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_spread_motor_1">
+      <inertial>
+         <origin xyz="0.00033171103493194633 -0.0012996185931885792 -0.011549255267191682" rpy="0.2189229213454535 -1.5685935590418891 1.2124127093261978"/>
+         <mass value="0.048381719564314196"/>
+         <inertia ixx="1.2970642642121234e-05" iyy="1.0080657126572666e-05" izz="6.067444152610555e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_spread_motor_1">
+         <origin xyz="-4.635344990172431e-05 -0.007515921440695716 -0.011428398130128803" rpy="1.5716895445470493 -0.0357197538968117 -0.004558496347485286"/>
+         <geometry>
+            <mesh filename="converted_MCP_spread_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="metacarpal_1">
+         <origin xyz="0.0004905200393887625 0.001311589034655651 -0.011600022272262" rpy="2.8115287875607464e-12 -1.5707944368717461 1.353298964545261"/>
+         <geometry>
+            <mesh filename="converted_metacarpal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_spread_1">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_spread_1">
+      <parent link="finger_1"/>
+      <child link="MCP_spread_1"/>
+      <origin xyz="0.0 0.0 0.0036" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 -1.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_spread_1_offset">
+      <parent link="MCP_spread_1"/>
+      <child link="MCP_spread_motor_1"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_motor_1">
+      <inertial>
+         <origin xyz="-0.01075063245970428 0.018898557009748136 -2.1660334886299653e-05" rpy="2.0037481261009646 -1.5693746381240332 -0.5343355659664715"/>
+         <mass value="0.03054697798015003"/>
+         <inertia ixx="8.656648973875026e-06" iyy="6.8192871065997126e-06" izz="3.3174459180579647e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_motor_1">
+         <origin xyz="-0.011428398355419095 0.007515921019831961 -4.6353140753378416e-05" rpy="1.4447304277690831 -1.534786990398103 0.12687770321054914"/>
+         <geometry>
+            <mesh filename="converted_MCP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="proximal_1">
+         <origin xyz="-0.010153186678769664 0.028932269079190158 1.0619656356722351e-07" rpy="-0.94447354838298 -1.57078099523063 -2.0402465328690766"/>
+         <geometry>
+            <mesh filename="converted_proximal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_1">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_1">
+      <parent link="MCP_spread_motor_1"/>
+      <child link="MCP_1"/>
+      <origin xyz="0.0106 0.0235 -0.0116" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_1_offset">
+      <parent link="MCP_1"/>
+      <child link="MCP_motor_1"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="PIP_DIP_motor_1">
+      <inertial>
+         <origin xyz="-0.011132365214068563 0.015039797375842575 -2.4533817079811976e-05" rpy="1.7328748589638918 -1.569248062505492 -0.20372882752594934"/>
+         <mass value="0.027039615966078"/>
+         <inertia ixx="5.824816339372749e-06" iyy="4.2950776822015344e-06" izz="2.938118444741233e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="PIP_DIP_motor_1">
+         <origin xyz="-0.011428398277497451 0.007515918719851786 -4.63533120795348e-05" rpy="1.4447301554026972 -1.5347865969220886 0.12687793468219688"/>
+         <geometry>
+            <mesh filename="converted_PIP_DIP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="middle_1">
+         <origin xyz="-0.010799506632702576 0.02349962124414677 -5.025117995327566e-11" rpy="3.1329748550747634 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_middle_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="PIP_1">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="PIP_1">
+      <parent link="MCP_motor_1"/>
+      <child link="PIP_1"/>
+      <origin xyz="0.0 0.039 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="PIP_1_offset">
+      <parent link="PIP_1"/>
+      <child link="PIP_DIP_motor_1"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="distal_1">
+      <inertial>
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.7967460587377142 -1.5707864814453474 -0.22584485481155903"/>
+         <mass value="0.014961355067968947"/>
+         <inertia ixx="2.371757096575845e-06" iyy="2.1675472103992333e-06" izz="1.012844041502717e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="distal_1">
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.796746058737714 -1.5707864814453474 -0.22584485481155914"/>
+         <geometry>
+            <mesh filename="converted_distal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="DIP_1">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="DIP_1">
+      <parent link="PIP_DIP_motor_1"/>
+      <child link="DIP_1"/>
+      <origin xyz="0.0029 0.0305 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="DIP_1_offset">
+      <parent link="DIP_1"/>
+      <child link="distal_1"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="finger_2">
+      <inertial>
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948963 0.0"/>
+         <mass value="0.000657218797018835"/>
+         <inertia ixx="1.7510324245333604e-08" iyy="9.68743156888488e-09" izz="9.674325660088184e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="base_link">
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_base_link.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="hand2finger_2_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="hand2finger_2_fixed">
+      <parent link="hand"/>
+      <child link="hand2finger_2_fixed"/>
+      <origin xyz="-0.0725 0.0 0.022" rpy="0.0 0.0 1.5707963267948963"/>
+   </joint>
+   <joint type="fixed" name="hand2finger_2_fixed_offset">
+      <parent link="hand2finger_2_fixed"/>
+      <child link="finger_2"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_spread_motor_2">
+      <inertial>
+         <origin xyz="0.00033171103493194633 -0.0012996185931885792 -0.011549255267191682" rpy="0.2189229213454535 -1.5685935590418891 1.2124127093261978"/>
+         <mass value="0.048381719564314196"/>
+         <inertia ixx="1.2970642642121234e-05" iyy="1.0080657126572666e-05" izz="6.067444152610555e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_spread_motor_1">
+         <origin xyz="-4.635344990172431e-05 -0.007515921440695716 -0.011428398130128803" rpy="1.5716895445470493 -0.0357197538968117 -0.004558496347485286"/>
+         <geometry>
+            <mesh filename="converted_MCP_spread_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="metacarpal_1">
+         <origin xyz="0.0004905200393887625 0.001311589034655651 -0.011600022272262" rpy="2.8115287875607464e-12 -1.5707944368717461 1.353298964545261"/>
+         <geometry>
+            <mesh filename="converted_metacarpal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_spread_2">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_spread_2">
+      <parent link="finger_2"/>
+      <child link="MCP_spread_2"/>
+      <origin xyz="0.0 0.0 0.0036" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 -1.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_spread_2_offset">
+      <parent link="MCP_spread_2"/>
+      <child link="MCP_spread_motor_2"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_motor_2">
+      <inertial>
+         <origin xyz="-0.01075063245970428 0.018898557009748136 -2.1660334886299653e-05" rpy="2.0037481261009646 -1.5693746381240332 -0.5343355659664715"/>
+         <mass value="0.03054697798015003"/>
+         <inertia ixx="8.656648973875026e-06" iyy="6.8192871065997126e-06" izz="3.3174459180579647e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_motor_1">
+         <origin xyz="-0.011428398355419095 0.007515921019831961 -4.6353140753378416e-05" rpy="1.4447304277690831 -1.534786990398103 0.12687770321054914"/>
+         <geometry>
+            <mesh filename="converted_MCP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="proximal_1">
+         <origin xyz="-0.010153186678769664 0.028932269079190158 1.0619656356722351e-07" rpy="-0.94447354838298 -1.57078099523063 -2.0402465328690766"/>
+         <geometry>
+            <mesh filename="converted_proximal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_2">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_2">
+      <parent link="MCP_spread_motor_2"/>
+      <child link="MCP_2"/>
+      <origin xyz="0.0106 0.0235 -0.0116" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_2_offset">
+      <parent link="MCP_2"/>
+      <child link="MCP_motor_2"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="PIP_DIP_motor_2">
+      <inertial>
+         <origin xyz="-0.011132365214068563 0.015039797375842575 -2.4533817079811976e-05" rpy="1.7328748589638918 -1.569248062505492 -0.20372882752594934"/>
+         <mass value="0.027039615966078"/>
+         <inertia ixx="5.824816339372749e-06" iyy="4.2950776822015344e-06" izz="2.938118444741233e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="PIP_DIP_motor_1">
+         <origin xyz="-0.011428398277497451 0.007515918719851786 -4.63533120795348e-05" rpy="1.4447301554026972 -1.5347865969220886 0.12687793468219688"/>
+         <geometry>
+            <mesh filename="converted_PIP_DIP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="middle_1">
+         <origin xyz="-0.010799506632702576 0.02349962124414677 -5.025117995327566e-11" rpy="3.1329748550747634 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_middle_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="PIP_2">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="PIP_2">
+      <parent link="MCP_motor_2"/>
+      <child link="PIP_2"/>
+      <origin xyz="0.0 0.039 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="PIP_2_offset">
+      <parent link="PIP_2"/>
+      <child link="PIP_DIP_motor_2"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="distal_2">
+      <inertial>
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.7967460587377142 -1.5707864814453474 -0.22584485481155903"/>
+         <mass value="0.014961355067968947"/>
+         <inertia ixx="2.371757096575845e-06" iyy="2.1675472103992333e-06" izz="1.012844041502717e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="distal_1">
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.796746058737714 -1.5707864814453474 -0.22584485481155914"/>
+         <geometry>
+            <mesh filename="converted_distal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="DIP_2">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="DIP_2">
+      <parent link="PIP_DIP_motor_2"/>
+      <child link="DIP_2"/>
+      <origin xyz="0.0029 0.0305 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="DIP_2_offset">
+      <parent link="DIP_2"/>
+      <child link="distal_2"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="finger_3">
+      <inertial>
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948963 0.0"/>
+         <mass value="0.000657218797018835"/>
+         <inertia ixx="1.7510324245333604e-08" iyy="9.68743156888488e-09" izz="9.674325660088184e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="base_link">
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_base_link.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="hand2finger_3_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="hand2finger_3_fixed">
+      <parent link="hand"/>
+      <child link="hand2finger_3_fixed"/>
+      <origin xyz="-0.05126524163602469 -0.051265241636024694 0.022" rpy="0.0 0.0 2.3561944926404053"/>
+   </joint>
+   <joint type="fixed" name="hand2finger_3_fixed_offset">
+      <parent link="hand2finger_3_fixed"/>
+      <child link="finger_3"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_spread_motor_3">
+      <inertial>
+         <origin xyz="0.00033171103493194633 -0.0012996185931885792 -0.011549255267191682" rpy="0.2189229213454535 -1.5685935590418891 1.2124127093261978"/>
+         <mass value="0.048381719564314196"/>
+         <inertia ixx="1.2970642642121234e-05" iyy="1.0080657126572666e-05" izz="6.067444152610555e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_spread_motor_1">
+         <origin xyz="-4.635344990172431e-05 -0.007515921440695716 -0.011428398130128803" rpy="1.5716895445470493 -0.0357197538968117 -0.004558496347485286"/>
+         <geometry>
+            <mesh filename="converted_MCP_spread_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="metacarpal_1">
+         <origin xyz="0.0004905200393887625 0.001311589034655651 -0.011600022272262" rpy="2.8115287875607464e-12 -1.5707944368717461 1.353298964545261"/>
+         <geometry>
+            <mesh filename="converted_metacarpal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_spread_3">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_spread_3">
+      <parent link="finger_3"/>
+      <child link="MCP_spread_3"/>
+      <origin xyz="0.0 0.0 0.0036" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 -1.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_spread_3_offset">
+      <parent link="MCP_spread_3"/>
+      <child link="MCP_spread_motor_3"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_motor_3">
+      <inertial>
+         <origin xyz="-0.01075063245970428 0.018898557009748136 -2.1660334886299653e-05" rpy="2.0037481261009646 -1.5693746381240332 -0.5343355659664715"/>
+         <mass value="0.03054697798015003"/>
+         <inertia ixx="8.656648973875026e-06" iyy="6.8192871065997126e-06" izz="3.3174459180579647e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_motor_1">
+         <origin xyz="-0.011428398355419095 0.007515921019831961 -4.6353140753378416e-05" rpy="1.4447304277690831 -1.534786990398103 0.12687770321054914"/>
+         <geometry>
+            <mesh filename="converted_MCP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="proximal_1">
+         <origin xyz="-0.010153186678769664 0.028932269079190158 1.0619656356722351e-07" rpy="-0.94447354838298 -1.57078099523063 -2.0402465328690766"/>
+         <geometry>
+            <mesh filename="converted_proximal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_3">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_3">
+      <parent link="MCP_spread_motor_3"/>
+      <child link="MCP_3"/>
+      <origin xyz="0.0106 0.0235 -0.0116" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_3_offset">
+      <parent link="MCP_3"/>
+      <child link="MCP_motor_3"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="PIP_DIP_motor_3">
+      <inertial>
+         <origin xyz="-0.011132365214068563 0.015039797375842575 -2.4533817079811976e-05" rpy="1.7328748589638918 -1.569248062505492 -0.20372882752594934"/>
+         <mass value="0.027039615966078"/>
+         <inertia ixx="5.824816339372749e-06" iyy="4.2950776822015344e-06" izz="2.938118444741233e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="PIP_DIP_motor_1">
+         <origin xyz="-0.011428398277497451 0.007515918719851786 -4.63533120795348e-05" rpy="1.4447301554026972 -1.5347865969220886 0.12687793468219688"/>
+         <geometry>
+            <mesh filename="converted_PIP_DIP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="middle_1">
+         <origin xyz="-0.010799506632702576 0.02349962124414677 -5.025117995327566e-11" rpy="3.1329748550747634 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_middle_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="PIP_3">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="PIP_3">
+      <parent link="MCP_motor_3"/>
+      <child link="PIP_3"/>
+      <origin xyz="0.0 0.039 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="PIP_3_offset">
+      <parent link="PIP_3"/>
+      <child link="PIP_DIP_motor_3"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="distal_3">
+      <inertial>
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.7967460587377142 -1.5707864814453474 -0.22584485481155903"/>
+         <mass value="0.014961355067968947"/>
+         <inertia ixx="2.371757096575845e-06" iyy="2.1675472103992333e-06" izz="1.012844041502717e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="distal_1">
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.796746058737714 -1.5707864814453474 -0.22584485481155914"/>
+         <geometry>
+            <mesh filename="converted_distal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="DIP_3">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="DIP_3">
+      <parent link="PIP_DIP_motor_3"/>
+      <child link="DIP_3"/>
+      <origin xyz="0.0029 0.0305 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="DIP_3_offset">
+      <parent link="DIP_3"/>
+      <child link="distal_3"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="finger_4">
+      <inertial>
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948963 0.0"/>
+         <mass value="0.000657218797018835"/>
+         <inertia ixx="1.7510324245333604e-08" iyy="9.68743156888488e-09" izz="9.674325660088184e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="base_link">
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_base_link.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="hand2finger_4_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="hand2finger_4_fixed">
+      <parent link="hand"/>
+      <child link="hand2finger_4_fixed"/>
+      <origin xyz="0.0 -0.0725 0.022" rpy="0.0 0.0 3.141592653589793"/>
+   </joint>
+   <joint type="fixed" name="hand2finger_4_fixed_offset">
+      <parent link="hand2finger_4_fixed"/>
+      <child link="finger_4"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_spread_motor_4">
+      <inertial>
+         <origin xyz="0.00033171103493194633 -0.0012996185931885792 -0.011549255267191682" rpy="0.2189229213454535 -1.5685935590418891 1.2124127093261978"/>
+         <mass value="0.048381719564314196"/>
+         <inertia ixx="1.2970642642121234e-05" iyy="1.0080657126572666e-05" izz="6.067444152610555e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_spread_motor_1">
+         <origin xyz="-4.635344990172431e-05 -0.007515921440695716 -0.011428398130128803" rpy="1.5716895445470493 -0.0357197538968117 -0.004558496347485286"/>
+         <geometry>
+            <mesh filename="converted_MCP_spread_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="metacarpal_1">
+         <origin xyz="0.0004905200393887625 0.001311589034655651 -0.011600022272262" rpy="2.8115287875607464e-12 -1.5707944368717461 1.353298964545261"/>
+         <geometry>
+            <mesh filename="converted_metacarpal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_spread_4">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_spread_4">
+      <parent link="finger_4"/>
+      <child link="MCP_spread_4"/>
+      <origin xyz="0.0 0.0 0.0036" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 -1.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_spread_4_offset">
+      <parent link="MCP_spread_4"/>
+      <child link="MCP_spread_motor_4"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_motor_4">
+      <inertial>
+         <origin xyz="-0.01075063245970428 0.018898557009748136 -2.1660334886299653e-05" rpy="2.0037481261009646 -1.5693746381240332 -0.5343355659664715"/>
+         <mass value="0.03054697798015003"/>
+         <inertia ixx="8.656648973875026e-06" iyy="6.8192871065997126e-06" izz="3.3174459180579647e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_motor_1">
+         <origin xyz="-0.011428398355419095 0.007515921019831961 -4.6353140753378416e-05" rpy="1.4447304277690831 -1.534786990398103 0.12687770321054914"/>
+         <geometry>
+            <mesh filename="converted_MCP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="proximal_1">
+         <origin xyz="-0.010153186678769664 0.028932269079190158 1.0619656356722351e-07" rpy="-0.94447354838298 -1.57078099523063 -2.0402465328690766"/>
+         <geometry>
+            <mesh filename="converted_proximal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_4">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_4">
+      <parent link="MCP_spread_motor_4"/>
+      <child link="MCP_4"/>
+      <origin xyz="0.0106 0.0235 -0.0116" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_4_offset">
+      <parent link="MCP_4"/>
+      <child link="MCP_motor_4"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="PIP_DIP_motor_4">
+      <inertial>
+         <origin xyz="-0.011132365214068563 0.015039797375842575 -2.4533817079811976e-05" rpy="1.7328748589638918 -1.569248062505492 -0.20372882752594934"/>
+         <mass value="0.027039615966078"/>
+         <inertia ixx="5.824816339372749e-06" iyy="4.2950776822015344e-06" izz="2.938118444741233e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="PIP_DIP_motor_1">
+         <origin xyz="-0.011428398277497451 0.007515918719851786 -4.63533120795348e-05" rpy="1.4447301554026972 -1.5347865969220886 0.12687793468219688"/>
+         <geometry>
+            <mesh filename="converted_PIP_DIP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="middle_1">
+         <origin xyz="-0.010799506632702576 0.02349962124414677 -5.025117995327566e-11" rpy="3.1329748550747634 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_middle_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="PIP_4">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="PIP_4">
+      <parent link="MCP_motor_4"/>
+      <child link="PIP_4"/>
+      <origin xyz="0.0 0.039 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="PIP_4_offset">
+      <parent link="PIP_4"/>
+      <child link="PIP_DIP_motor_4"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="distal_4">
+      <inertial>
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.7967460587377142 -1.5707864814453474 -0.22584485481155903"/>
+         <mass value="0.014961355067968947"/>
+         <inertia ixx="2.371757096575845e-06" iyy="2.1675472103992333e-06" izz="1.012844041502717e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="distal_1">
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.796746058737714 -1.5707864814453474 -0.22584485481155914"/>
+         <geometry>
+            <mesh filename="converted_distal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="DIP_4">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="DIP_4">
+      <parent link="PIP_DIP_motor_4"/>
+      <child link="DIP_4"/>
+      <origin xyz="0.0029 0.0305 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="DIP_4_offset">
+      <parent link="DIP_4"/>
+      <child link="distal_4"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="finger_5">
+      <inertial>
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948963 0.0"/>
+         <mass value="0.000657218797018835"/>
+         <inertia ixx="1.7510324245333604e-08" iyy="9.68743156888488e-09" izz="9.674325660088184e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="base_link">
+         <origin xyz="6.216408663460327e-08 2.3192417713995757e-06 0.004623478145951719" rpy="3.141592653589793 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_base_link.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="hand2finger_5_fixed">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="fixed" name="hand2finger_5_fixed">
+      <parent link="hand"/>
+      <child link="hand2finger_5_fixed"/>
+      <origin xyz="0.0512652416360247 -0.05126524163602469 0.022" rpy="0.0 0.0 -2.3561944926404053"/>
+   </joint>
+   <joint type="fixed" name="hand2finger_5_fixed_offset">
+      <parent link="hand2finger_5_fixed"/>
+      <child link="finger_5"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_spread_motor_5">
+      <inertial>
+         <origin xyz="0.00033171103493194633 -0.0012996185931885792 -0.011549255267191682" rpy="0.2189229213454535 -1.5685935590418891 1.2124127093261978"/>
+         <mass value="0.048381719564314196"/>
+         <inertia ixx="1.2970642642121234e-05" iyy="1.0080657126572666e-05" izz="6.067444152610555e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_spread_motor_1">
+         <origin xyz="-4.635344990172431e-05 -0.007515921440695716 -0.011428398130128803" rpy="1.5716895445470493 -0.0357197538968117 -0.004558496347485286"/>
+         <geometry>
+            <mesh filename="converted_MCP_spread_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="metacarpal_1">
+         <origin xyz="0.0004905200393887625 0.001311589034655651 -0.011600022272262" rpy="2.8115287875607464e-12 -1.5707944368717461 1.353298964545261"/>
+         <geometry>
+            <mesh filename="converted_metacarpal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_spread_5">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_spread_5">
+      <parent link="finger_5"/>
+      <child link="MCP_spread_5"/>
+      <origin xyz="0.0 0.0 0.0036" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 -1.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_spread_5_offset">
+      <parent link="MCP_spread_5"/>
+      <child link="MCP_spread_motor_5"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="MCP_motor_5">
+      <inertial>
+         <origin xyz="-0.01075063245970428 0.018898557009748136 -2.1660334886299653e-05" rpy="2.0037481261009646 -1.5693746381240332 -0.5343355659664715"/>
+         <mass value="0.03054697798015003"/>
+         <inertia ixx="8.656648973875026e-06" iyy="6.8192871065997126e-06" izz="3.3174459180579647e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="MCP_motor_1">
+         <origin xyz="-0.011428398355419095 0.007515921019831961 -4.6353140753378416e-05" rpy="1.4447304277690831 -1.534786990398103 0.12687770321054914"/>
+         <geometry>
+            <mesh filename="converted_MCP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="proximal_1">
+         <origin xyz="-0.010153186678769664 0.028932269079190158 1.0619656356722351e-07" rpy="-0.94447354838298 -1.57078099523063 -2.0402465328690766"/>
+         <geometry>
+            <mesh filename="converted_proximal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="MCP_5">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="MCP_5">
+      <parent link="MCP_spread_motor_5"/>
+      <child link="MCP_5"/>
+      <origin xyz="0.0106 0.0235 -0.0116" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="MCP_5_offset">
+      <parent link="MCP_5"/>
+      <child link="MCP_motor_5"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="PIP_DIP_motor_5">
+      <inertial>
+         <origin xyz="-0.011132365214068563 0.015039797375842575 -2.4533817079811976e-05" rpy="1.7328748589638918 -1.569248062505492 -0.20372882752594934"/>
+         <mass value="0.027039615966078"/>
+         <inertia ixx="5.824816339372749e-06" iyy="4.2950776822015344e-06" izz="2.938118444741233e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="PIP_DIP_motor_1">
+         <origin xyz="-0.011428398277497451 0.007515918719851786 -4.63533120795348e-05" rpy="1.4447301554026972 -1.5347865969220886 0.12687793468219688"/>
+         <geometry>
+            <mesh filename="converted_PIP_DIP_motor_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+      <visual name="middle_1">
+         <origin xyz="-0.010799506632702576 0.02349962124414677 -5.025117995327566e-11" rpy="3.1329748550747634 -1.5707963267948966 0.0"/>
+         <geometry>
+            <mesh filename="converted_middle_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="PIP_5">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="PIP_5">
+      <parent link="MCP_motor_5"/>
+      <child link="PIP_5"/>
+      <origin xyz="0.0 0.039 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="PIP_5_offset">
+      <parent link="PIP_5"/>
+      <child link="PIP_DIP_motor_5"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <link name="distal_5">
+      <inertial>
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.7967460587377142 -1.5707864814453474 -0.22584485481155903"/>
+         <mass value="0.014961355067968947"/>
+         <inertia ixx="2.371757096575845e-06" iyy="2.1675472103992333e-06" izz="1.012844041502717e-06" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+      <visual name="distal_1">
+         <origin xyz="-0.013499638625891203 0.016280893760927853 -1.995377682077748e-07" rpy="1.796746058737714 -1.5707864814453474 -0.22584485481155914"/>
+         <geometry>
+            <mesh filename="converted_distal_1.stl"/>
+         </geometry>
+         <material name="white"/>
+      </visual>
+   </link>
+   <link name="DIP_5">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.001"/>
+         <inertia ixx="1e-09" iyy="1e-09" izz="1e-09" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+   </link>
+   <joint type="revolute" name="DIP_5">
+      <parent link="PIP_DIP_motor_5"/>
+      <child link="DIP_5"/>
+      <origin xyz="0.0029 0.0305 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="-1.0 0.0 0.0"/>
+      <limit lower="-2.0" upper="2.0" effort="100" velocity="100"/>
+   </joint>
+   <joint type="fixed" name="DIP_5_offset">
+      <parent link="DIP_5"/>
+      <child link="distal_5"/>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0.0 0.0 0.0"/>
+   </joint>
+   <material name="white">
+      <color rgba="1 1 1 1"/>
+   </material>
+</robot>

@@ -1,0 +1,184 @@
+<allegro>
+
+
+    <body name="finger_1" pos="0 0.0725 0.022">
+<!--            <geom pos="0 -0.01 0.007" quat="1 0 0 0" type="box" size="0.015 0.02 0.002" rgba="0.1 1 .1 1"/>-->
+            <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+            <body name="MCP_spread_motor_1" pos="0 0 0.0036">
+            <inertial pos="0.000229415 -0.00168831 -0.0114777" quat="0.513903 0.485699 -0.512542 0.487136" mass="0.233232" diaginertia="9.56159e-05 7.87309e-05 3.58914e-05" />
+            <joint name="MCP_spread_1" pos="0 0 0" axis="0 0 -1" range="-2 2"/>
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_spread_motor_1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="metacarpal_1" />
+            <body name="MCP_motor_1" pos="0.0106 0.0435 -0.0116">
+                <inertial pos="-0.0103737 0.0169576 3.00801e-06" quat="0.518903 0.480363 -0.518852 0.480399" mass="0.166546" diaginertia="7.42141e-05 6.31269e-05 2.00872e-05" />
+                <joint name="MCP_1" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_motor_1" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="proximal_1" />
+                <body name="PIP_DIP_motor_1" pos="0 0.059 0">
+                    <inertial pos="-0.0106984 0.0139189 3.21942e-06" quat="0.508179 0.491701 -0.508113 0.491737" mass="0.155609" diaginertia="4.94178e-05 4.12633e-05 1.81545e-05" />
+                    <joint name="PIP_1" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0 0.7 0 1" mesh="PIP_DIP_motor_1" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0 0.7 0 1" mesh="middle_1" />
+                    <body name="distal_1" pos="0.0029 0.0505 0">
+                        <inertial pos="-0.0135 0.0273545 0" quat="0.5 0.5 -0.5 0.5" mass="0.189554" diaginertia="5.5e-05 5.4e-05 1.4e-05" />
+                        <joint name="DIP_1" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                        <geom class="sliding_finger" pos="-0.0135 -0.153 0.008" type="mesh" rgba="0 0.7 0 1" mesh="distal_1" />
+                        <site name="finger_1_tip" pos="-0.0135 0.046 0" euler="0 0 0" size="0.005  0.005 0.005"/>
+                    </body>
+                </body>
+            </body>
+        </body>
+     </body>
+
+    <body name="finger_2" pos="-0.0725 0 0.022" quat="1 0 0 1">
+<!--        <geom pos="0 -0.01  0.007" quat="1 0 0 0" type="box" size="0.015 0.02 0.002" rgba="0.1 1 .1 1"/>-->
+            <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+            <body name="MCP_spread_motor_2" pos="0 0 0.0036">
+            <inertial pos="0.000229415 -0.00168831 -0.0114777" quat="0.513903 0.485699 -0.512542 0.487136" mass="0.233232" diaginertia="9.56159e-05 7.87309e-05 3.58914e-05" />
+            <joint name="MCP_spread_2" pos="0 0 0" axis="0 0 -1" range="-2 2"/>
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_spread_motor_1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="metacarpal_1" />
+            <body name="MCP_motor_2" pos="0.0106 0.0435 -0.0116">
+                <inertial pos="-0.0103737 0.0169576 3.00801e-06" quat="0.518903 0.480363 -0.518852 0.480399" mass="0.166546" diaginertia="7.42141e-05 6.31269e-05 2.00872e-05" />
+                <joint name="MCP_2" pos="0 0 0" axis="-1 0 0" range="-2 2" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_motor_1" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="proximal_1" />
+                <body name="PIP_DIP_motor_2" pos="0 0.059 0">
+                    <inertial pos="-0.0106984 0.0139189 3.21942e-06" quat="0.508179 0.491701 -0.508113 0.491737" mass="0.155609" diaginertia="4.94178e-05 4.12633e-05 1.81545e-05" />
+                    <joint name="PIP_2" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="PIP_DIP_motor_1" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="middle_1" />
+                    <body name="distal_2" pos="0.0029 0.0505 0">
+                        <inertial pos="-0.0135 0.0273545 0" quat="0.5 0.5 -0.5 0.5" mass="0.189554" diaginertia="5.5e-05 5.4e-05 1.4e-05" />
+                        <joint name="DIP_2" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                        <geom class="sliding_finger" pos="-0.0135 -0.153 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="distal_1" />
+                        <site name="finger_2_tip" pos="-0.0135 0.046 0" euler="0 0 0" size="0.005  0.005 0.005"/>
+
+                    </body>
+                </body>
+            </body>
+        </body>
+     </body>
+
+    <body name="finger_3" pos="-0.05126524163602469 -0.051265241636024694 0.022" quat="0.38268343  0.         -0.          0.92387953">
+<!--        <geom pos="0 -0.01  0.007" quat="1 0 0 0" type="box" size="0.015 0.02 0.002" rgba="0.1 1 .1 1"/>-->
+            <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+            <body name="MCP_spread_motor_3" pos="0 0 0.0036">
+            <inertial pos="0.000229415 -0.00168831 -0.0114777" quat="0.513903 0.485699 -0.512542 0.487136" mass="0.233232" diaginertia="9.56159e-05 7.87309e-05 3.58914e-05" />
+            <joint name="MCP_spread_3" pos="0 0 0" axis="0 0 -1" range="-2 2"/>
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_spread_motor_1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="metacarpal_1" />
+            <body name="MCP_motor_3" pos="0.0106 0.0435 -0.0116">
+                <inertial pos="-0.0103737 0.0169576 3.00801e-06" quat="0.518903 0.480363 -0.518852 0.480399" mass="0.166546" diaginertia="7.42141e-05 6.31269e-05 2.00872e-05" />
+                <joint name="MCP_3" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_motor_1" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="proximal_1" />
+                <body name="PIP_DIP_motor_3" pos="0 0.059 0">
+                    <inertial pos="-0.0106984 0.0139189 3.21942e-06" quat="0.508179 0.491701 -0.508113 0.491737" mass="0.155609" diaginertia="4.94178e-05 4.12633e-05 1.81545e-05" />
+                    <joint name="PIP_3" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="PIP_DIP_motor_1" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="middle_1" />
+                    <body name="distal_3" pos="0.0029 0.0505 0">
+                        <inertial pos="-0.0135 0.0273545 0" quat="0.5 0.5 -0.5 0.5" mass="0.189554" diaginertia="5.5e-05 5.4e-05 1.4e-05" />
+                        <joint name="DIP_3" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                        <geom class="sliding_finger" pos="-0.0135 -0.153 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="distal_1" />
+                        <site name="finger_3_tip" pos="-0.0135 0.046 0" euler="0 0 0" size="0.005  0.005 0.005"/>
+
+                    </body>
+                </body>
+            </body>
+        </body>
+     </body>
+
+    <body name="finger_4" pos="0 -0.0725  0.022 " quat="0 0 0 1">
+<!--        <geom pos="0 -0.01  0.007" quat="1 0 0 0" type="box" size="0.015 0.02 0.002" rgba="0.1 1 .1 1"/>-->
+            <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+           <body name="MCP_spread_motor_4" pos="0 0 0.0036">
+            <inertial pos="0.000229415 -0.00168831 -0.0114777" quat="0.513903 0.485699 -0.512542 0.487136" mass="0.233232" diaginertia="9.56159e-05 7.87309e-05 3.58914e-05" />
+            <joint name="MCP_spread_4" pos="0 0 0" axis="0 0 -1" range="-2 2"/>
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_spread_motor_1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="metacarpal_1" />
+            <body name="MCP_motor_4" pos="0.0106 0.0435 -0.0116">
+                <inertial pos="-0.0103737 0.0169576 3.00801e-06" quat="0.518903 0.480363 -0.518852 0.480399" mass="0.166546" diaginertia="7.42141e-05 6.31269e-05 2.00872e-05" />
+                <joint name="MCP_4" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_motor_1" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="proximal_1" />
+                <body name="PIP_DIP_motor_4" pos="0 0.059 0">
+                    <inertial pos="-0.0106984 0.0139189 3.21942e-06" quat="0.508179 0.491701 -0.508113 0.491737" mass="0.155609" diaginertia="4.94178e-05 4.12633e-05 1.81545e-05" />
+                    <joint name="PIP_4" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="PIP_DIP_motor_1" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="middle_1" />
+                    <body name="distal_4" pos="0.0029 0.0505 0">
+                        <inertial pos="-0.0135 0.0273545 0" quat="0.5 0.5 -0.5 0.5" mass="0.189554" diaginertia="5.5e-05 5.4e-05 1.4e-05" />
+                        <joint name="DIP_4" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                        <geom class="sliding_finger" pos="-0.0135 -0.153 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="distal_1" />
+                        <site name="finger_4_tip" pos="-0.0135 0.046 0" euler="0 0 0" size="0.005  0.005 0.005"/>
+
+                    </body>
+                </body>
+            </body>
+        </body>
+     </body>
+
+    <body name="finger_5"  pos="0.0512652416360247 -0.05126524163602469 0.022" quat="-0.38268343  0.         -0.          0.92387953">
+<!--        <geom pos="0 -0.01 0.007" quat="1 0 0 0" type="box" size="0.015 0.02 0.002" rgba="0.1 1 .1 1"/>-->
+        <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+            <body name="MCP_spread_motor_5" pos="0 0 0.0036">
+            <inertial pos="0.000229415 -0.00168831 -0.0114777" quat="0.513903 0.485699 -0.512542 0.487136" mass="0.233232" diaginertia="9.56159e-05 7.87309e-05 3.58914e-05" />
+            <joint name="MCP_spread_5" pos="0 0 0" axis="0 0 -1" range="-2 2"/>
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_spread_motor_1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="metacarpal_1" />
+            <body name="MCP_motor_5" pos="0.0106 0.0435 -0.0116">
+                <inertial pos="-0.0103737 0.0169576 3.00801e-06" quat="0.518903 0.480363 -0.518852 0.480399" mass="0.166546" diaginertia="7.42141e-05 6.31269e-05 2.00872e-05" />
+                <joint name="MCP_5" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_motor_1" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="proximal_1" />
+                <body name="PIP_DIP_motor_5" pos="0 0.059 0">
+                    <inertial pos="-0.0106984 0.0139189 3.21942e-06" quat="0.508179 0.491701 -0.508113 0.491737" mass="0.155609" diaginertia="4.94178e-05 4.12633e-05 1.81545e-05" />
+                    <joint name="PIP_5" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="PIP_DIP_motor_1" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="middle_1" />
+                    <body name="distal_5" pos="0.0029 0.0505 0">
+                        <inertial pos="-0.0135 0.0273545 0" quat="0.5 0.5 -0.5 0.5" mass="0.189554" diaginertia="5.5e-05 5.4e-05 1.4e-05" />
+                        <joint name="DIP_5" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                        <geom class="sliding_finger" pos="-0.0135 -0.153 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="distal_1" />
+                        <site name="finger_5_tip" pos="-0.0135 0.046 0" euler="0 0 0" size="0.005  0.005 0.005"/>
+
+                    </body>
+                </body>
+            </body>
+        </body>
+     </body>
+
+     <body name="finger_6" pos="0.05126524163602469 0.051265241636024694 0.022" quat="0.92387953  0.          0.         -0.38268343">
+<!--        <geom pos="0 -0.01  0.007" quat="1 0 0 0" type="box" size="0.015 0.02 0.002" rgba="0.1 1 .1 1"/>-->
+            <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link" />
+            <body name="MCP_spread_motor_6" pos="0 0 0.0036">
+            <inertial pos="0.000229415 -0.00168831 -0.0114777" quat="0.513903 0.485699 -0.512542 0.487136" mass="0.233232" diaginertia="9.56159e-05 7.87309e-05 3.58914e-05" />
+            <joint name="MCP_spread_6" pos="0 0 0" axis="0 0 -1" range="-2 2"/>
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_spread_motor_1" />
+            <geom pos="0 0 -0.0036" type="mesh" rgba="0.7 0.7 0.7 1" mesh="metacarpal_1" />
+            <body name="MCP_motor_6" pos="0.0106 0.0435 -0.0116">
+                <inertial pos="-0.0103737 0.0169576 3.00801e-06" quat="0.518903 0.480363 -0.518852 0.480399" mass="0.166546" diaginertia="7.42141e-05 6.31269e-05 2.00872e-05" />
+                <joint name="MCP_6" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="MCP_motor_1" />
+                <geom pos="-0.0106 -0.0435 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="proximal_1" />
+                <body name="PIP_DIP_motor_6" pos="0 0.059 0">
+                    <inertial pos="-0.0106984 0.0139189 3.21942e-06" quat="0.508179 0.491701 -0.508113 0.491737" mass="0.155609" diaginertia="4.94178e-05 4.12633e-05 1.81545e-05" />
+                    <joint name="PIP_6" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="PIP_DIP_motor_1" />
+                    <geom pos="-0.0106 -0.1025 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="middle_1" />
+                    <body name="distal_6" pos="0.0029 0.0505 0">
+                        <inertial pos="-0.0135 0.0273545 0" quat="0.5 0.5 -0.5 0.5" mass="0.189554" diaginertia="5.5e-05 5.4e-05 1.4e-05" />
+                        <joint name="DIP_6" pos="0 0 0" axis="-1 0 0" range="-2 2"/>
+                        <geom class="sliding_finger" pos="-0.0135 -0.153 0.008" type="mesh" rgba="0.7 0.7 0.7 1" mesh="distal_1" />
+                        <site name="finger_6_tip"  pos="-0.0135 0.046 0" euler="0 0 0" size="0.005  0.005 0.005"/>
+
+                    </body>
+                </body>
+            </body>
+        </body>
+     </body>
+
+
+</allegro>

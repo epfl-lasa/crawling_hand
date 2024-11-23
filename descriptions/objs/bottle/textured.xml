@@ -1,0 +1,148 @@
+<mujoco model="textured">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="texture_map" file="texture_map.png"/>
+    <material name="material_0" texture="texture_map" specular="0.5" shininess="0.5"/>
+    <mesh file="textured.obj"/>
+    <mesh file="textured_collision_0.obj"/>
+    <mesh file="textured_collision_1.obj"/>
+    <mesh file="textured_collision_2.obj"/>
+    <mesh file="textured_collision_3.obj"/>
+    <mesh file="textured_collision_4.obj"/>
+    <mesh file="textured_collision_5.obj"/>
+    <mesh file="textured_collision_6.obj"/>
+    <mesh file="textured_collision_7.obj"/>
+    <mesh file="textured_collision_8.obj"/>
+    <mesh file="textured_collision_9.obj"/>
+    <mesh file="textured_collision_10.obj"/>
+    <mesh file="textured_collision_11.obj"/>
+    <mesh file="textured_collision_12.obj"/>
+    <mesh file="textured_collision_13.obj"/>
+    <mesh file="textured_collision_14.obj"/>
+    <mesh file="textured_collision_15.obj"/>
+    <mesh file="textured_collision_16.obj"/>
+    <mesh file="textured_collision_17.obj"/>
+    <mesh file="textured_collision_18.obj"/>
+    <mesh file="textured_collision_19.obj"/>
+    <mesh file="textured_collision_20.obj"/>
+    <mesh file="textured_collision_21.obj"/>
+    <mesh file="textured_collision_22.obj"/>
+    <mesh file="textured_collision_23.obj"/>
+    <mesh file="textured_collision_24.obj"/>
+    <mesh file="textured_collision_25.obj"/>
+    <mesh file="textured_collision_26.obj"/>
+    <mesh file="textured_collision_27.obj"/>
+    <mesh file="textured_collision_28.obj"/>
+    <mesh file="textured_collision_29.obj"/>
+    <mesh file="textured_collision_30.obj"/>
+    <mesh file="textured_collision_31.obj"/>
+    <mesh file="textured_collision_32.obj"/>
+    <mesh file="textured_collision_33.obj"/>
+    <mesh file="textured_collision_34.obj"/>
+    <mesh file="textured_collision_35.obj"/>
+    <mesh file="textured_collision_36.obj"/>
+    <mesh file="textured_collision_37.obj"/>
+    <mesh file="textured_collision_38.obj"/>
+    <mesh file="textured_collision_39.obj"/>
+    <mesh file="textured_collision_40.obj"/>
+    <mesh file="textured_collision_41.obj"/>
+    <mesh file="textured_collision_42.obj"/>
+    <mesh file="textured_collision_43.obj"/>
+    <mesh file="textured_collision_44.obj"/>
+    <mesh file="textured_collision_45.obj"/>
+    <mesh file="textured_collision_46.obj"/>
+    <mesh file="textured_collision_47.obj"/>
+    <mesh file="textured_collision_48.obj"/>
+    <mesh file="textured_collision_49.obj"/>
+    <mesh file="textured_collision_50.obj"/>
+    <mesh file="textured_collision_51.obj"/>
+    <mesh file="textured_collision_52.obj"/>
+    <mesh file="textured_collision_53.obj"/>
+    <mesh file="textured_collision_54.obj"/>
+    <mesh file="textured_collision_55.obj"/>
+    <mesh file="textured_collision_56.obj"/>
+    <mesh file="textured_collision_57.obj"/>
+    <mesh file="textured_collision_58.obj"/>
+    <mesh file="textured_collision_59.obj"/>
+    <mesh file="textured_collision_60.obj"/>
+    <mesh file="textured_collision_61.obj"/>
+    <mesh file="textured_collision_62.obj"/>
+    <mesh file="textured_collision_63.obj"/>
+  </asset>
+  <worldbody>
+    <body name="textured">
+      <geom material="material_0" mesh="textured" class="visual"/>
+      <geom mesh="textured_collision_0" class="collision"/>
+      <geom mesh="textured_collision_1" class="collision"/>
+      <geom mesh="textured_collision_2" class="collision"/>
+      <geom mesh="textured_collision_3" class="collision"/>
+      <geom mesh="textured_collision_4" class="collision"/>
+      <geom mesh="textured_collision_5" class="collision"/>
+      <geom mesh="textured_collision_6" class="collision"/>
+      <geom mesh="textured_collision_7" class="collision"/>
+      <geom mesh="textured_collision_8" class="collision"/>
+      <geom mesh="textured_collision_9" class="collision"/>
+      <geom mesh="textured_collision_10" class="collision"/>
+      <geom mesh="textured_collision_11" class="collision"/>
+      <geom mesh="textured_collision_12" class="collision"/>
+      <geom mesh="textured_collision_13" class="collision"/>
+      <geom mesh="textured_collision_14" class="collision"/>
+      <geom mesh="textured_collision_15" class="collision"/>
+      <geom mesh="textured_collision_16" class="collision"/>
+      <geom mesh="textured_collision_17" class="collision"/>
+      <geom mesh="textured_collision_18" class="collision"/>
+      <geom mesh="textured_collision_19" class="collision"/>
+      <geom mesh="textured_collision_20" class="collision"/>
+      <geom mesh="textured_collision_21" class="collision"/>
+      <geom mesh="textured_collision_22" class="collision"/>
+      <geom mesh="textured_collision_23" class="collision"/>
+      <geom mesh="textured_collision_24" class="collision"/>
+      <geom mesh="textured_collision_25" class="collision"/>
+      <geom mesh="textured_collision_26" class="collision"/>
+      <geom mesh="textured_collision_27" class="collision"/>
+      <geom mesh="textured_collision_28" class="collision"/>
+      <geom mesh="textured_collision_29" class="collision"/>
+      <geom mesh="textured_collision_30" class="collision"/>
+      <geom mesh="textured_collision_31" class="collision"/>
+      <geom mesh="textured_collision_32" class="collision"/>
+      <geom mesh="textured_collision_33" class="collision"/>
+      <geom mesh="textured_collision_34" class="collision"/>
+      <geom mesh="textured_collision_35" class="collision"/>
+      <geom mesh="textured_collision_36" class="collision"/>
+      <geom mesh="textured_collision_37" class="collision"/>
+      <geom mesh="textured_collision_38" class="collision"/>
+      <geom mesh="textured_collision_39" class="collision"/>
+      <geom mesh="textured_collision_40" class="collision"/>
+      <geom mesh="textured_collision_41" class="collision"/>
+      <geom mesh="textured_collision_42" class="collision"/>
+      <geom mesh="textured_collision_43" class="collision"/>
+      <geom mesh="textured_collision_44" class="collision"/>
+      <geom mesh="textured_collision_45" class="collision"/>
+      <geom mesh="textured_collision_46" class="collision"/>
+      <geom mesh="textured_collision_47" class="collision"/>
+      <geom mesh="textured_collision_48" class="collision"/>
+      <geom mesh="textured_collision_49" class="collision"/>
+      <geom mesh="textured_collision_50" class="collision"/>
+      <geom mesh="textured_collision_51" class="collision"/>
+      <geom mesh="textured_collision_52" class="collision"/>
+      <geom mesh="textured_collision_53" class="collision"/>
+      <geom mesh="textured_collision_54" class="collision"/>
+      <geom mesh="textured_collision_55" class="collision"/>
+      <geom mesh="textured_collision_56" class="collision"/>
+      <geom mesh="textured_collision_57" class="collision"/>
+      <geom mesh="textured_collision_58" class="collision"/>
+      <geom mesh="textured_collision_59" class="collision"/>
+      <geom mesh="textured_collision_60" class="collision"/>
+      <geom mesh="textured_collision_61" class="collision"/>
+      <geom mesh="textured_collision_62" class="collision"/>
+      <geom mesh="textured_collision_63" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

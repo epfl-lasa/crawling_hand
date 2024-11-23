@@ -1,0 +1,71 @@
+<ycb>
+    <asset>
+        <texture type="2d" name="banana" file="YCB_objects/banana/texture_map.png" />
+        <material name="banana" texture="banana" specular="0.5" shininess="0.5" />
+        <mesh file="YCB_objects/banana/textured.obj" name="banana" />
+        <mesh file="YCB_objects/banana/textured_collision_0.obj" name="banana_0" />
+        <mesh file="YCB_objects/banana/textured_collision_1.obj" name="banana_1" />
+        <mesh file="YCB_objects/banana/textured_collision_2.obj" name="banana_2" />
+        <mesh file="YCB_objects/banana/textured_collision_3.obj" name="banana_3" />
+        <mesh file="YCB_objects/banana/textured_collision_4.obj" name="banana_4" />
+        <mesh file="YCB_objects/banana/textured_collision_5.obj" name="banana_5" />
+        <mesh file="YCB_objects/banana/textured_collision_6.obj" name="banana_6" />
+        <mesh file="YCB_objects/banana/textured_collision_7.obj" name="banana_7" />
+        <mesh file="YCB_objects/banana/textured_collision_8.obj" name="banana_8" />
+        <mesh file="YCB_objects/banana/textured_collision_9.obj" name="banana_9" />
+        <mesh file="YCB_objects/banana/textured_collision_10.obj" name="banana_10" />
+        <mesh file="YCB_objects/banana/textured_collision_11.obj" name="banana_11" />
+        <mesh file="YCB_objects/banana/textured_collision_12.obj" name="banana_12" />
+        <mesh file="YCB_objects/banana/textured_collision_13.obj" name="banana_13" />
+        <mesh file="YCB_objects/banana/textured_collision_14.obj" name="banana_14" />
+        <mesh file="YCB_objects/banana/textured_collision_15.obj" name="banana_15" />
+        <mesh file="YCB_objects/banana/textured_collision_16.obj" name="banana_16" />
+        <mesh file="YCB_objects/banana/textured_collision_17.obj" name="banana_17" />
+        <mesh file="YCB_objects/banana/textured_collision_18.obj" name="banana_18" />
+        <mesh file="YCB_objects/banana/textured_collision_19.obj" name="banana_19" />
+        <mesh file="YCB_objects/banana/textured_collision_20.obj" name="banana_20" />
+        <mesh file="YCB_objects/banana/textured_collision_21.obj" name="banana_21" />
+        <mesh file="YCB_objects/banana/textured_collision_22.obj" name="banana_22" />
+        <mesh file="YCB_objects/banana/textured_collision_23.obj" name="banana_23" />
+        <mesh file="YCB_objects/banana/textured_collision_24.obj" name="banana_24" />
+        <mesh file="YCB_objects/banana/textured_collision_25.obj" name="banana_25" />
+        <mesh file="YCB_objects/banana/textured_collision_26.obj" name="banana_26" />
+        <mesh file="YCB_objects/banana/textured_collision_27.obj" name="banana_27" />
+        <mesh file="YCB_objects/banana/textured_collision_28.obj" name="banana_28" />
+        <mesh file="YCB_objects/banana/textured_collision_29.obj" name="banana_29" />
+        <mesh file="YCB_objects/banana/textured_collision_30.obj" name="banana_30" />
+        <mesh file="YCB_objects/banana/textured_collision_31.obj" name="banana_31" />
+        <mesh file="YCB_objects/banana/textured_collision_32.obj" name="banana_32" />
+        <mesh file="YCB_objects/banana/textured_collision_33.obj" name="banana_33" />
+        <mesh file="YCB_objects/banana/textured_collision_34.obj" name="banana_34" />
+        <mesh file="YCB_objects/banana/textured_collision_35.obj" name="banana_35" />
+        <mesh file="YCB_objects/banana/textured_collision_36.obj" name="banana_36" />
+        <mesh file="YCB_objects/banana/textured_collision_37.obj" name="banana_37" />
+        <mesh file="YCB_objects/banana/textured_collision_38.obj" name="banana_38" />
+        <mesh file="YCB_objects/banana/textured_collision_39.obj" name="banana_39" />
+        <mesh file="YCB_objects/banana/textured_collision_40.obj" name="banana_40" />
+        <mesh file="YCB_objects/banana/textured_collision_41.obj" name="banana_41" />
+        <mesh file="YCB_objects/banana/textured_collision_42.obj" name="banana_42" />
+        <mesh file="YCB_objects/banana/textured_collision_43.obj" name="banana_43" />
+        <mesh file="YCB_objects/banana/textured_collision_44.obj" name="banana_44" />
+        <mesh file="YCB_objects/banana/textured_collision_45.obj" name="banana_45" />
+        <mesh file="YCB_objects/banana/textured_collision_46.obj" name="banana_46" />
+        <mesh file="YCB_objects/banana/textured_collision_47.obj" name="banana_47" />
+        <mesh file="YCB_objects/banana/textured_collision_48.obj" name="banana_48" />
+        <mesh file="YCB_objects/banana/textured_collision_49.obj" name="banana_49" />
+        <mesh file="YCB_objects/banana/textured_collision_50.obj" name="banana_50" />
+        <mesh file="YCB_objects/banana/textured_collision_51.obj" name="banana_51" />
+        <mesh file="YCB_objects/banana/textured_collision_52.obj" name="banana_52" />
+        <mesh file="YCB_objects/banana/textured_collision_53.obj" name="banana_53" />
+        <mesh file="YCB_objects/banana/textured_collision_54.obj" name="banana_54" />
+        <mesh file="YCB_objects/banana/textured_collision_55.obj" name="banana_55" />
+        <mesh file="YCB_objects/banana/textured_collision_56.obj" name="banana_56" />
+        <mesh file="YCB_objects/banana/textured_collision_57.obj" name="banana_57" />
+        <mesh file="YCB_objects/banana/textured_collision_58.obj" name="banana_58" />
+        <mesh file="YCB_objects/banana/textured_collision_59.obj" name="banana_59" />
+        <mesh file="YCB_objects/banana/textured_collision_60.obj" name="banana_60" />
+        <mesh file="YCB_objects/banana/textured_collision_61.obj" name="banana_61" />
+        <mesh file="YCB_objects/banana/textured_collision_62.obj" name="banana_62" />
+        <mesh file="YCB_objects/banana/textured_collision_63.obj" name="banana_63" />
+  </asset>
+</ycb>
