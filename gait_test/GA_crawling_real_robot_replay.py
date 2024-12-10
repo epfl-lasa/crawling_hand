@@ -109,10 +109,10 @@ for i in fingers_2_record:
 
 print(best_solution)
 
-# for f in file_names:
+for f in file_names:
 
-for i in [best_solution]:  # only sim the best
-    f = best_solution[1]
+# for i in [best_solution]:  # only sim the best
+#     f = best_solution[1]
 
 
 # for f in file_names:
@@ -155,7 +155,7 @@ for i in [best_solution]:  # only sim the best
     obj_names = ['sphere_1', 'cylinder_1', 'box_1', 'box_2', 'box_3']
     view = 1  # disable GUI view
     tracking_camera = 0
-    hand = mujoco_sim(fingers, dofs, link_length, n, view=view, GA_solve=False, N_TIME=1000*10, obj_names=obj_names,
+    hand = mujoco_sim(fingers, dofs, link_length, n, view=view, GA_solve=False, N_TIME=1000*2, obj_names=obj_names,
                       q_grasp=q_grasp, q_used=q_used,ycb_poses=ycb_poses,used_objs=used_obj, real=True, tracking_camera=tracking_camera, version=4 - len(fixed))
 
 

@@ -6,22 +6,11 @@ from os import listdir
 from os.path import isfile, join
 
 path = '../data_records/full_test/'
-name = '1711537795'  # 4 fingers, nice
-# name = '1711539614'  # 6
-# name = '1711541490'  # 6
-# name = '1711536188'  # 5 # nice
 
-name = '1711881734'
 
-# file_names = [f[3:-4] for f in listdir(path) if isfile(join(path, f)) and len(f) ==17 and f[:3] =='GA_']
-# file_names = sorted(file_names)
-# latest = -2
-#
-# num_str = str(file_names[latest])
 a = 0
 file_names = ['1000', '2000', '3000', '4000']  # load the different grasp, check the best structure for crawling.
 for name in file_names:
-    # name = '1711881734'
     print(name, a, len(file_names))
     a += 1
     data = np.load(path + 'GA_' + name + '.npz')

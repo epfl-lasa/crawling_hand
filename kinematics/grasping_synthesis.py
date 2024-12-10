@@ -888,7 +888,7 @@ class mujoco_sim(object):
                     if self.r.m.geom(i).name not in visible_links:
                         self.r.m.geom(i).rgba = colors[self.r.m.geom(i).name]
                 self.r.sync()
-                time.sleep(100)
+                time.sleep(1)
             # self.r.modify_joint(np.array([0,0,0,1,0,0,0]))
 
             # self.r.sync()

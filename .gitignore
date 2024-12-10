@@ -9,7 +9,7 @@ __pychae__/*
 *.mat
 *.pth
 
-data_records/*
+
 Videos/
 *.jpg
 *.mp4
