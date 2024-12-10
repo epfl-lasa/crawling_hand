@@ -1,0 +1,183 @@
+<mujoco model="hand">
+            <compiler angle="radian" assetdir="../descriptions/" inertiafromgeom="true" />
+            <size njmax="500" nconmax="100" />
+            
+            <visual>
+              <global offwidth="1920" offheight="1080" />
+            </visual>
+            
+            <option>
+                <flag gravity="enable" />
+            </option>
+
+            <default>
+                <joint limited="true" damping="1" armature="0" />
+                <geom contype="1" conaffinity="1" condim="3" rgba="0.8 0.6 .4 1" margin="0.001" solref=".02 1" solimp=".8 .8 .01" material="geom" />
+            </default>
+
+         <default>
+            <joint damping="0.01" frictionloss="0" />
+            <default class="visual">
+              <geom contype="0" conaffinity="0" />
+            </default>
+            <default class="collision">
+              <geom contype="1" conaffinity="1" friction="1 0.5 0.1" />
+            </default>
+              <default class="obj">
+              <geom condim="3" priority="1" friction="1 1 1" solref=".02 0.8" solimp=".8 .8 .01" />
+            </default>
+
+              <default class="fingers">
+              <geom friction="1 0.5 0.2" />
+            </default>
+            <site rgba="1 0 0 0" size="0.005 0.005 0.005" />
+          </default>
+
+                <asset>
+                    <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01" />
+                    <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" />
+
+                    <material name="MatPlane" reflectance="0.5" texture="texplane" texrepeat="1 1" texuniform="true" />
+                    <material name="geom" texture="texgeom" texuniform="true" />
+                     <texture builtin="flat" name="allegro_mount_tex" height="32" width="32" rgb1="0.2 0.2 0.2" type="cube" />
+                     <texture builtin="flat" name="hand_tex" height="32" width="32" rgb1="0.2 0.2 0.2 " type="cube" />
+                     <texture builtin="flat" name="tip_tex" height="32" width="32" rgb1="0.9 0.9 0.9" type="cube" />
+
+                    <material name="allegro_mount_mat" shininess="0.03" specular="0.25" />
+                    <material name="hand_mat" shininess="0.03" specular="0.25" />
+                    <material name="tip_mat" shininess="0.03" specular="0.25" />
+                </asset>
+    
+            <worldbody>
+                <light pos="0 0 1000" castshadow="false" />
+                 <light directional="false" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 0 4.0" dir="0 -.15 -1" />
+                 <camera name="closeup" pos="0 -.1 .07" xyaxes="1 0 0 0 1 2" />
+                <geom name="floor" class="collision" type="plane" size="10 10 1" rgba=".8 .8 .8 1" pos="0 0 -0.25" material="MatPlane" />
+                    <body name="hand" euler="0 0 0" pos="0 0 0.01">
+            <freejoint />
+            <geom class="fingers" name="hand_base" pos="0 0 0" quat="1 0 0 0" type="cylinder" size="0.05 0.01" rgba="0.1 1 .1 1" /> 
+
+                        <body name="finger_0" pos="0 0 0">
+                          <body name="aux_00" pos="0.05 0.0 0" quat="0.9999996008191248 0.0 0.0 0.0008935108231599496">
+                            <geom class="fingers" fromto="0 0 0 0.036 0 0" name="g_00" size="0.01" type="capsule" />
+                        <body name="aux_01" pos="0.036 0 0" quat="0.9999993027170079 -0.0 -0.0011809172274269333 -0.0">
+                                        <geom class="fingers" fromto="0 0 0 0.036 0 0" name="g_01" size="0.01" type="capsule" rgba="0.9 0 0 1" />
+                                    <body name="aux_02" pos="0.036 0 0" quat="0.8185134691910833 0.0 0.5744873373302296 0.0">
+                                        <geom class="fingers" fromto="0 0 0 0.036 0 0" name="g_02" size="0.01" type="capsule" rgba="0.0 0.6 0 1" />
+                                    <body name="aux_03" pos="0.036 0 0" quat="0.7966085828492817 0.0 0.6044954637802159 0.0">
+                                        <geom class="fingers" fromto="0 0 0 0.036 0 0" name="g_03" size="0.01" type="capsule" rgba="0.1 0.1 1 1" />
+                                            <site name="finger_site_0" pos="0.036 0 0" />
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    
+                        <body name="finger_2" pos="0 0 0">
+                          <body name="aux_20" pos="3.061616997868383e-18 0.05 0" quat="0.7071067811865476 0.0 -0.0 0.7071067811865475">
+                            <joint axis="0 0 1" name="joint_20" pos="0 0 0" range="-1 1" type="hinge" />
+                            <geom class="fingers" fromto="0 0 0 0.056 0 0" name="g_20" size="0.01" type="capsule" />
+                        <body name="aux_21" pos="0.056 0 0">
+                              <joint axis="0 1 0" name="joint_21" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.056 0 0" name="g_21" size="0.01" type="capsule" rgba="0.9 0 0 1" />
+                        <body name="aux_22" pos="0.056 0 0">
+                              <joint axis="0 1 0" name="joint_22" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.056 0 0" name="g_22" size="0.01" type="capsule" rgba="0.0 0.6 0 1" />
+                        <body name="aux_23" pos="0.056 0 0">
+                              <joint axis="0 1 0" name="joint_23" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.056 0 0" name="g_23" size="0.01" type="capsule" rgba="0.1 0.1 1 1" />
+                                <site name="finger_site_2" pos="0.056 0 0" />
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    
+                        <body name="finger_3" pos="0 0 0">
+                          <body name="aux_30" pos="-0.035355339059327376 0.03535533905932738 0" quat="0.38268343236508984 0.0 -0.0 0.9238795325112867">
+                            <joint axis="0 0 1" name="joint_30" pos="0 0 0" range="-1 1" type="hinge" />
+                            <geom class="fingers" fromto="0 0 0 0.047 0 0" name="g_30" size="0.01" type="capsule" />
+                        <body name="aux_31" pos="0.047 0 0">
+                              <joint axis="0 1 0" name="joint_31" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.047 0 0" name="g_31" size="0.01" type="capsule" rgba="0.9 0 0 1" />
+                        <body name="aux_32" pos="0.047 0 0">
+                              <joint axis="0 1 0" name="joint_32" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.047 0 0" name="g_32" size="0.01" type="capsule" rgba="0.0 0.6 0 1" />
+                        <body name="aux_33" pos="0.047 0 0">
+                              <joint axis="0 1 0" name="joint_33" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.047 0 0" name="g_33" size="0.01" type="capsule" rgba="0.1 0.1 1 1" />
+                                <site name="finger_site_3" pos="0.047 0 0" />
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    
+                        <body name="finger_5" pos="0 0 0">
+                          <body name="aux_50" pos="-0.03535533905932738 -0.035355339059327376 0" quat="-0.3826834323650897 0.0 -0.0 0.9238795325112867">
+                            <joint axis="0 0 1" name="joint_50" pos="0 0 0" range="-1 1" type="hinge" />
+                            <geom class="fingers" fromto="0 0 0 0.085 0 0" name="g_50" size="0.01" type="capsule" />
+                        <body name="aux_51" pos="0.085 0 0">
+                              <joint axis="0 1 0" name="joint_51" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.085 0 0" name="g_51" size="0.01" type="capsule" rgba="0.9 0 0 1" />
+                        <body name="aux_52" pos="0.085 0 0">
+                              <joint axis="0 1 0" name="joint_52" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.085 0 0" name="g_52" size="0.01" type="capsule" rgba="0.0 0.6 0 1" />
+                        <body name="aux_53" pos="0.085 0 0">
+                              <joint axis="0 1 0" name="joint_53" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.085 0 0" name="g_53" size="0.01" type="capsule" rgba="0.1 0.1 1 1" />
+                                <site name="finger_site_5" pos="0.085 0 0" />
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    
+                        <body name="finger_6" pos="0 0 0">
+                          <body name="aux_60" pos="-9.184850993605149e-18 -0.05 0" quat="-0.7071067811865475 0.0 -0.0 0.7071067811865476">
+                            <joint axis="0 0 1" name="joint_60" pos="0 0 0" range="-1 1" type="hinge" />
+                            <geom class="fingers" fromto="0 0 0 0.093 0 0" name="g_60" size="0.01" type="capsule" />
+                        <body name="aux_61" pos="0.093 0 0">
+                              <joint axis="0 1 0" name="joint_61" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.093 0 0" name="g_61" size="0.01" type="capsule" rgba="0.9 0 0 1" />
+                        <body name="aux_62" pos="0.093 0 0">
+                              <joint axis="0 1 0" name="joint_62" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.093 0 0" name="g_62" size="0.01" type="capsule" rgba="0.0 0.6 0 1" />
+                        <body name="aux_63" pos="0.093 0 0">
+                              <joint axis="0 1 0" name="joint_63" pos="0 0 0" range="-2 2" type="hinge" />
+                              <geom class="fingers" fromto="0 0 0 0.093 0 0" name="g_63" size="0.01" type="capsule" rgba="0.1 0.1 1 1" />
+                                <site name="finger_site_6" pos="0.093 0 0" />
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    </body>
+                    <body name="sphere_1" pos="0.08835418615614497 0.002575148515077186 -0.029887265850693435 ">
+                                   <geom name="sphere_1" class="obj" mass="0.005" rgba="1 0 0 1" size="0.02" type="sphere" />
+                                   </body>                    
+                    
+
+
+                            </body>
+                        </worldbody>
+
+                            <actuator>
+                <motor name="joint_20" ctrllimited="true" ctrlrange="-2 2" joint="joint_20" />
+                    <motor name="joint_21" ctrllimited="true" ctrlrange="-2 2" joint="joint_21" />
+                    <motor name="joint_22" ctrllimited="true" ctrlrange="-2 2" joint="joint_22" />
+                    <motor name="joint_23" ctrllimited="true" ctrlrange="-2 2" joint="joint_23" />
+                    <motor name="joint_30" ctrllimited="true" ctrlrange="-2 2" joint="joint_30" />
+                    <motor name="joint_31" ctrllimited="true" ctrlrange="-2 2" joint="joint_31" />
+                    <motor name="joint_32" ctrllimited="true" ctrlrange="-2 2" joint="joint_32" />
+                    <motor name="joint_33" ctrllimited="true" ctrlrange="-2 2" joint="joint_33" />
+                    <motor name="joint_50" ctrllimited="true" ctrlrange="-2 2" joint="joint_50" />
+                    <motor name="joint_51" ctrllimited="true" ctrlrange="-2 2" joint="joint_51" />
+                    <motor name="joint_52" ctrllimited="true" ctrlrange="-2 2" joint="joint_52" />
+                    <motor name="joint_53" ctrllimited="true" ctrlrange="-2 2" joint="joint_53" />
+                    <motor name="joint_60" ctrllimited="true" ctrlrange="-2 2" joint="joint_60" />
+                    <motor name="joint_61" ctrllimited="true" ctrlrange="-2 2" joint="joint_61" />
+                    <motor name="joint_62" ctrllimited="true" ctrlrange="-2 2" joint="joint_62" />
+                    <motor name="joint_63" ctrllimited="true" ctrlrange="-2 2" joint="joint_63" />
+                    </actuator>
+
+        </mujoco>

@@ -18,7 +18,7 @@ from crawling_robot_sim import crawling_robot_sim, GA_locomotion
 # obj_nums = 1
 pinch_one_only = 0
 
-for i in [5000]:
+for i in [1000, 2000, 3000, 4000, 5000]:
     obj_nums = int(i / 1000)
     if obj_nums >= 4:
         pinch_one_only = 1

@@ -1,5 +1,5 @@
 <mujoco model="iiwa7">
-    <compiler angle="radian" inertiafromgeom="true" meshdir="/home/lasa/research/projects/crawling_hand/crawling_hand/descriptions/v2/meshes/"/>
+    <compiler angle="radian" inertiafromgeom="true" meshdir="meshes/"/>
     <size njmax="500" nconmax="100" />
 
     <option noslip_iterations="5"> </option>
@@ -93,8 +93,8 @@
 
         <body name="hand_base" euler="0 0 0" pos="0 0 0.0">
             <freejoint/>
-             <geom class="fingers" name="hand_base_1" mass="0.01"  pos="0 0 0.03" quat="1 0 0 0" type="cylinder" size="0.08 0.001" rgba="0.1 1 .1 1"/>
-             <geom class="fingers" name="hand_base_2" mass="0.01" pos="0 0 0" quat="1 0 0 0" type="cylinder" size="0.08 0.001" rgba="0.1 1 .1 1"/>
+             <geom class="fingers" name="hand_base_1" mass="0.01"  pos="0 0 0.03" quat="1 0 0 0" type="cylinder" size="0.08 0.001" rgba="0.95 0.95 0.95 1"/>
+             <geom class="fingers" name="hand_base_2" mass="0.01" pos="0 0 0" quat="1 0 0 0" type="cylinder" size="0.08 0.001" rgba="0.95 0.95 0.95 1"/>
             <body name="hand">
                 <include file="hand_v2_bodies.xml"/>
             </body>

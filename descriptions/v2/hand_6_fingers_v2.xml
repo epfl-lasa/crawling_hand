@@ -1,5 +1,5 @@
 <mujoco model="iiwa7">
-    <compiler angle="radian" inertiafromgeom="true" meshdir="/home/lasa/research/projects/crawling_hand/crawling_hand/descriptions/v2/meshes/"/>
+    <compiler angle="radian" inertiafromgeom="true" meshdir="descriptions/v2/meshes/"/>
     <size njmax="500" nconmax="100" />
 
     <option noslip_iterations="5"> </option>
@@ -19,7 +19,6 @@
       <geom contype="0" conaffinity="0"/>
     </default>
     <default class="collision">
-<!--      <geom contype="1" conaffinity="1" friction="1 0 0.1" solref="-100000 -200"  />-->
       <geom contype="1" conaffinity="1" friction="1 0.04 0.2" solref="-100000 -200"  />
     </default>
       <default class="obj">
