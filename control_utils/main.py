@@ -110,6 +110,14 @@ class LeapNode:
         self.curr_pos = np.array(pose)
         self.dxl_client.write_desired_pos(self.motors, self.curr_pos)
 
+    # Motors torque off
+    def motors_torque_off(self):
+        self.dxl_client.set_torque_enabled(motor_ids=self.motors, enabled=False)
+
+    # Motors torque off
+    def motors_torque_on(self):
+        self.dxl_client.set_torque_enabled(motor_ids=self.motors, enabled=True)
+
     # read position
     def read_pos(self):
         return self.dxl_client.read_pos()
