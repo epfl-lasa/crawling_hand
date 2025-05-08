@@ -771,7 +771,7 @@ class locomotion(Robot):
                 self.leg_states = [1, 0, 1, 0, 1]
                 first = 1
             else:
-                # self.leg_states = [1, 1, 0, 1, 0]
+                # self.leg_states = [1, 1, 0, 1, 0] 
                 pass
             t1 = t - int(t * self.f) / self.f
             if int(t * self.f) > T:
@@ -1011,13 +1011,12 @@ class locomotion(Robot):
                          max_vel=0.005,
                          radius=[0.2, 0.2, 0.3, 0.3], angle_threshold=5):
         """
-
-        :param attractor: (7,), attractor for the center of the palm
-        :param f:
-        :param swing_legs: index list of swing legs for the first half period of locomotion
-        :param stance_legs:
-        :param threshold:  the distance threshold to determine that if it reaches the goal or not
-        :return:
+        :param attractor: (7,), attractor for the center of the palm 
+        :param f: 
+        :param swing_legs: index list of swing legs for the first half period of locomotion 
+        :param stance_legs: 
+        :param threshold:  the distance threshold to determine that if it reaches the goal or not 
+        :return: 
         """
         dx_local = np.zeros(2)
         t_period_last = 1e10

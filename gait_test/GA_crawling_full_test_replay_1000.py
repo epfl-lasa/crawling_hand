@@ -5,7 +5,7 @@ import os
 from os import listdir
 from os.path import isfile, join
 
-path = '../data_records/full_test/'
+path = 'data_records/full_test/' 
 
 
 a = 0

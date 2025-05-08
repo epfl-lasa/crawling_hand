@@ -6,7 +6,7 @@ import os
 # replay the CPGs with the real robot hand
 # v2 is the version 2
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # Workaround for weird module import structure
-# print(os.getcwd())
+print(os.getcwd())
 
 from controller_full import Robot
 import numpy as np
@@ -16,8 +16,8 @@ from os import listdir
 from os.path import isfile, join
 import os.path
 # import pygad
-from hand_generator_from_genes import crawling_hand
-from crawling_robot_sim import crawling_robot_sim, GA_locomotion
+from gait_test.hand_generator_from_genes import crawling_hand
+from gait_test.crawling_robot_sim import crawling_robot_sim, GA_locomotion
 from kinematics.grasping_synthesis import grasping, mujoco_sim
 from itertools import combinations
 

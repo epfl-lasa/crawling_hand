@@ -34,7 +34,7 @@ class ObjectDetector:
         self.depth_image = None
         self.rgb_image = None
 
-        # 上一次检测到的物体位姿
+        # 上一次检测到的物体位姿 - The last detected object pose
         self.last_poses = {
             'yellow': None,
             'blue': None,
@@ -42,9 +42,9 @@ class ObjectDetector:
 
         }
 
-        # 预期尺寸的面积范围（像素数，根据实际情况调整）
-        self.min_area = 1000  # 最小面积
-        self.max_area = 6000  # 最大面积
+        # 预期尺寸的面积范围（像素数，根据实际情况调整）- Expected size area range (number of pixels, adjusted according to actual situation)
+        self.min_area = 1000  # 最小面积 - Minimum area
+        self.max_area = 6000  # 最大面积 - Maximum area
 
         self.tf_broadcaster = tf.TransformBroadcaster()
         self.rect_ratio = 6
@@ -77,19 +77,19 @@ class ObjectDetector:
     def detect_objects(self):
         hsv_image = cv2.cvtColor(self.rgb_image, cv2.COLOR_BGR2HSV)
 
-        # 定义颜色范围
+        # 定义颜色范围 - Define color range
         colors = {
             'yellow': ((16, 103, 78), (25, 255, 255), [60, 30, 15]),
             'blue': ((90, 103, 78), (120, 255, 255), [30, 30, 30]),
-            'red1': ((0, 103, 78), (15, 255, 255), [30, 30, 30]),  # 低红色范围
-            'red2': ((135, 103, 78), (180, 255, 255), [30, 30, 30]),  # 高红色范围
+            'red1': ((0, 103, 78), (15, 255, 255), [30, 30, 30]),  # 低红色范围 - Low Red Range
+            'red2': ((135, 103, 78), (180, 255, 255), [30, 30, 30]),  # 高红色范围 - High Red Range
 
         }
 
-        # 创建一个空白的HSV分割结果图像
+        # 创建一个空白的HSV分割结果图像 - Create a blank HSV segmentation result image
         hsv_debug_image = np.zeros_like(self.rgb_image)
 
-        # 初始化新的位姿
+        # 初始化新的位姿 - Initialize a new pose
         new_poses = {
             'yellow': None,
             'blue': None,
@@ -102,12 +102,12 @@ class ObjectDetector:
                 continue
             elif color == 'red2':
                 mask2 = cv2.inRange(hsv_image, lower, upper)
-                mask = cv2.bitwise_or(mask1, mask2)  # 合并两个红色掩码
+                mask = cv2.bitwise_or(mask1, mask2)  # 合并两个红色掩码 - Merge the two red masks
                 # continue
             else:
                 mask = cv2.inRange(hsv_image, lower, upper)
             contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            hsv_debug_image[mask > 0] = self.rgb_image[mask > 0]  # 将分割结果复制到调试图像
+            hsv_debug_image[mask > 0] = self.rgb_image[mask > 0]  # 将分割结果复制到调试图像 - Copy the segmentation results to the debug image
 
             for contour in contours:
                 area = cv2.contourArea(contour)
@@ -119,7 +119,7 @@ class ObjectDetector:
                     if l1 >10 and l2> 10 and 1/self.rect_ratio < l1/l2 < self.rect_ratio:
                         cv2.drawContours(self.rgb_image, [box], -1, (0, 255, 0), 2)
 
-                        # 提取最小矩形包络的点云
+                        # 提取最小矩形包络的点云 - Extract the point cloud of the minimum rectangular envelope
                         mask_fill = np.zeros_like(mask)
                         cv2.fillPoly(mask_fill, [box], 255)
                         points_y, points_x = np.where(mask_fill == 255)
@@ -138,7 +138,7 @@ class ObjectDetector:
                             if pose is not None:
                                 new_poses[color.split('1')[0].split('2')[0]] = pose
 
-        # 发布检测到的位姿
+        # 发布检测到的位姿 - Publish detected poses
         pose_array = PoseArray()
         pose_array.header.stamp = rospy.Time.now()
         pose_array.header.frame_id = "camera_link"
@@ -182,38 +182,40 @@ class ObjectDetector:
         )
 
     def estimate_pose(self, points_3d, color):
-        # 计算质心
+        # 计算质心 - Calculate the centroid
         centroid = np.mean(points_3d, axis=0)
 
-        # 去质心
+        # 去质心 - De-centroiding
         points_centered = points_3d - centroid
 
-        # 计算协方差矩阵
+        # 计算协方差矩阵 - Calculate the covariance matrix
         cov_matrix = np.cov(points_centered.T)
 
-        # 计算特征值和特征向量
+        # 计算特征值和特征向量 - Compute eigenvalues ​​and eigenvectors
         eigenvalues, eigenvectors = np.linalg.eigh(cov_matrix)
 
         # 特征向量按特征值升序排列，所以长边方向是具有最大特征值的特征向量
-        # 取特征值最大的特征向量为长边方向
+        # 取特征值最大的特征向量为长边方向 - 
+        # The eigenvectors are arranged in ascending order by eigenvalue, so the long side direction is the eigenvector with the largest eigenvalue
+        # Take the eigenvector with the largest eigenvalue as the long side direction
         v1 = eigenvectors[:, np.argmax(eigenvalues)]
 
-        # Step 5: 取最小特征值对应的特征向量为v3
+        # Step 5: 取最小特征值对应的特征向量为v3 - Take the eigenvector corresponding to the minimum eigenvalue as v3
         v3 = eigenvectors[:, np.argmin(eigenvalues)]
 
-        # Step 6: 确保v3与相机z轴[0, 0, 1]夹角为钝角
+        # Step 6: 确保v3与相机z轴[0, 0, 1]夹角为钝角 - Make sure v3 is at an obtuse angle to the camera z-axis [0, 0, 1]
         camera_z_axis = np.array([0, 0, 1])
         if np.dot(v3, camera_z_axis) < 0:
             v3 = -v3
-        # Step 7: 计算新的y轴方向
+        # Step 7: 计算新的y轴方向 - Calculate the new y-axis direction
         v2 = np.cross(v3, v1)
 
-        # Step 8: 构建旋转矩阵
+        # Step 8: 构建旋转矩阵 - Constructing the rotation matrix
         R = np.column_stack((v1, v2, v3))
-        # 通过特征向量构建旋转矩阵
+        # 通过特征向量构建旋转矩阵 - Constructing a rotation matrix from eigenvectors
         # rotation_matrix = eigenvectors
 
-        # 转换为四元数
+        # 转换为四元数 - Convert to quaternion
         quaternion = mat2quat(R)
 
         pose = Pose()

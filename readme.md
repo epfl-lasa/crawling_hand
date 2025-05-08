@@ -26,6 +26,11 @@
 the link lengths and finger placements for grasping one, two, or three objects, respectively.
  - `*_replay_*.py` replay the crawling in simulation.
 
+How to run from project root (when not using PyCharm):
+```bash
+PYTHONPATH=. python gait_test/GA_crawling_real_robot_replay.py
+```
+
 
 # Notes
  - Under folder `singer_finger/`, `URDF_finger_xxxx.urdf `is the urdf file for a single finger.

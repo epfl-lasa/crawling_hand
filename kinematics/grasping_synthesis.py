@@ -801,12 +801,15 @@ class mujoco_sim(object):
             if self.real:
                 pass
                 if self.version == 1:
+                    # print("XML DATA LOADER 1")
                     xml_data = hand.return_xml_ycb_real(q_grasp=q_grasp, q_used=q_used, ycb_poses=ycb_poses,
                                                         used_objs=used_objs)
                 elif self.version == 2:
+                    # print("XML DATA LOADER 2")
                     xml_data = hand.return_xml_ycb_real_v2(q_grasp=q_grasp, q_used=q_used, ycb_poses=ycb_poses,
                                                            used_objs=used_objs, )
                 elif self.version == 3:
+                    # print("XML DATA LOADER 3")
                     xml_data = hand.return_xml_ycb_real_v3(q_grasp=q_grasp, q_used=q_used, ycb_poses=ycb_poses,
                                                            used_objs=used_objs, )
                 else:
@@ -854,7 +857,7 @@ class mujoco_sim(object):
 
     def run(self, x, init_only=False, tracking_camera=False, disable_links=False, record_q=False):
         #### for CPGs, run the simulation in MuJoCo ####
-
+        
         model = mujoco.MjModel.from_xml_string(self.xml_data)
         data = mujoco.MjData(model)
         if self.view is not None:

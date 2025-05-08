@@ -144,7 +144,7 @@ class crawling_hand:
         if not self.objects:
             if ycb_poses is not None:
                 xml_data += '''</body>
-                <include file="../descriptions/objs/ycb_bodies.xml"/>
+                <include file="descriptions/objs/ycb_bodies.xml"/>
                 </worldbody>
 
                 <actuator>
@@ -215,7 +215,7 @@ class crawling_hand:
                 # add spheres with freejoint
                 xml_data += '''</body>
 
-                        <include file="../descriptions/objs/box.xml"/>
+                        <include file="descriptions/objs/box.xml"/>
 
                             </worldbody>
 
@@ -354,7 +354,7 @@ class crawling_hand:
         if not self.objects:
             if ycb_poses is not None:
                 xml_data += '''</body>
-                 <include file="../descriptions/objs/ycb_bodies.xml"/>
+                 <include file="descriptions/objs/ycb_bodies.xml"/>
                  </worldbody>
 
                  <actuator>
@@ -424,7 +424,7 @@ class crawling_hand:
                 # add spheres with freejoint
                 xml_data += '''</body>
 
-                         <include file="../descriptions/objs/box.xml"/>
+                         <include file="descriptions/objs/box.xml"/>
 
                              </worldbody>
 
@@ -564,7 +564,7 @@ class crawling_hand:
         if not self.objects:
             if ycb_poses is not None:
                 xml_data += '''</body>
-                 <include file="../descriptions/objs/ycb_bodies.xml"/>
+                 <include file="descriptions/objs/ycb_bodies.xml"/>
                  </worldbody>
 
                  <actuator>
@@ -634,7 +634,7 @@ class crawling_hand:
                 # add spheres with freejoint
                 xml_data += '''</body>
 
-                         <include file="../descriptions/objs/box.xml"/>
+                         <include file="descriptions/objs/box.xml"/>
 
                              </worldbody>
 
@@ -760,7 +760,7 @@ class crawling_hand:
         if not self.objects:
             if ycb_poses is not None:
                 xml_data += '''</body>
-                <include file="../descriptions/objs/ycb_bodies.xml"/>
+                <include file="descriptions/objs/ycb_bodies.xml"/>
                 </worldbody>
 
                 <actuator>
@@ -800,7 +800,7 @@ class crawling_hand:
                 # add spheres with freejoint
                 xml_data += '''</body>
 
-                        <include file="../descriptions/objs/box.xml"/>
+                        <include file="descriptions/objs/box.xml"/>
 
                             </worldbody>
 
@@ -916,7 +916,7 @@ class crawling_hand:
         if not self.objects:
             if add_ycb is not None:
                 xml_data += '''</body>
-                <include file="../descriptions/objs/ycb_bodies.xml"/>
+                <include file="descriptions/objs/ycb_bodies.xml"/>
                 </worldbody>
                 
                 <actuator>
@@ -957,7 +957,7 @@ class crawling_hand:
                 # add spheres with freejoint
                 xml_data += '''</body>
                 
-                        <include file="../descriptions/objs/box.xml"/>
+                        <include file="descriptions/objs/box.xml"/>
                         
                             </worldbody>
     
@@ -1083,7 +1083,7 @@ class crawling_hand:
         if not self.objects:
             if add_ycb is not None:
                 xml_data += '''</body>
-                <include file="../descriptions/objs/ycb_bodies.xml"/>
+                <include file="descriptions/objs/ycb_bodies.xml"/>
                 </worldbody>
 
                 <actuator>
@@ -1128,7 +1128,7 @@ class crawling_hand:
                 # add spheres with freejoint
                 xml_data += '''</body>
 
-                        <include file="../descriptions/objs/box.xml"/>
+                        <include file="descriptions/objs/box.xml"/>
 
                             </worldbody>
 
@@ -1154,7 +1154,7 @@ class crawling_hand:
     def add_prefix_real_v3(self):
         a1 = """
         <mujoco model='iiwa7'>
-    <compiler angle='radian' inertiafromgeom='true' meshdir='../descriptions/v2/meshes/'/>
+    <compiler angle='radian' inertiafromgeom='true' meshdir='descriptions/v2/meshes/'/>
     <size njmax='500' nconmax='100' />
 
     <option>
@@ -1255,7 +1255,7 @@ class crawling_hand:
     def add_prefix_real(self):
         a1 = """
         <mujoco model='iiwa7'>
-    <compiler angle='radian' inertiafromgeom='true' meshdir='../descriptions/single_finger/shortest/meshes/'/>
+    <compiler angle='radian' inertiafromgeom='true' meshdir='descriptions/single_finger/shortest/meshes/'/>
     <size njmax='500' nconmax='100' />
 
     <option>
@@ -1355,7 +1355,7 @@ class crawling_hand:
     def add_prefix_real_v2(self):
         a1 = """
         <mujoco model='iiwa7'>
-    <compiler angle='radian' inertiafromgeom='true' meshdir='../descriptions/v2/meshes/'/>
+    <compiler angle='radian' inertiafromgeom='true' meshdir='descriptions/v2/meshes/'/>
     <size njmax='500' nconmax='100' />
 
     <option>
@@ -1456,7 +1456,7 @@ class crawling_hand:
         def add_prefix_real(self):
             a1 = """
             <mujoco model='iiwa7'>
-        <compiler angle='radian' inertiafromgeom='true' meshdir='../descriptions/single_finger/shortest/meshes/'/>
+        <compiler angle='radian' inertiafromgeom='true' meshdir='descriptions/single_finger/shortest/meshes/'/>
         <size njmax='500' nconmax='100' />
 
         <option>
@@ -1560,13 +1560,13 @@ class crawling_hand:
                     """
         if add_ycb is not None:
             a_ycb = """
-            <include file="../descriptions/objs/ycb_preloads.xml"/>
+            <include file="descriptions/objs/ycb_preloads.xml"/>
             """
         else:
             a_ycb = ''
 
         a1 = """<mujoco model="hand">
-            <compiler angle="radian" assetdir="../descriptions/" inertiafromgeom="true" />
+            <compiler angle="radian" assetdir="descriptions/" inertiafromgeom="true" />
             <size njmax="500" nconmax="100" />
             
             <visual>
