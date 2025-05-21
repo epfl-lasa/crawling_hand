@@ -122,6 +122,9 @@ class Robot:
             q1 = [sy.atan(Z_ / Y_) - tmp, sy.atan(Z_ / Y_) + tmp]
             self.q1 = sy.lambdify([[Y_, Z_, OB_, MB_]], q1)
 
+
+    # Some issues arise from "IK no soluition error cos(q0)="
+    # Might require a new ik algo here.
     def ik(self, positions: list, q_init=None, k=-1, fingers=None):
         """
         Given a list of fingertip positions, calculate the joint positions

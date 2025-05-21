@@ -1083,6 +1083,8 @@ class locomotion(Robot):
         dt = 0.002
         t_period = t_now % (1 / f)  # [0, T]
 
+        # Change roles between stance & locomotion legs
+
         if t_period < T / 2:  # FL and BR, front left and back right legs move during [0, T/2]
             swing_legs_, stance_legs_ = swing_legs, stance_legs
         else:
@@ -1097,6 +1099,8 @@ class locomotion(Robot):
             else:
                 x_cmd[i][2] = self.bezier((t_tmp - T / 4) / (T / 4), xh_local_init[i][2] + h, xh_local_init[i][2])
 
+        # Read MIT Paper for clarification: legs not in contact obey similar dynamics to manipulator (with base being the palm)
+        # Leg in contact with the floor is similar to manipulator with base being on the ground and EE being the palm
         for i in stance_legs_:
             t_tmp = t_period % (T / 2)
             x_cmd[i][:2] = self.bezier(t_tmp / (T / 2), xh_local_init[i][:2] + xy_step[i],
